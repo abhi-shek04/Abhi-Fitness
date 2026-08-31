@@ -1515,7 +1515,7 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
 
 <section class="sec" id="faq" style="border-top:1px solid var(--line)">
   <div class="wrap">
-    <p class="kicker" data-reveal><span data-i18n="fq.k">07 — QUESTIONS · よくある質問</span></p>
+    <p class="kicker" data-reveal><span data-i18n="fq.k">08 — QUESTIONS · よくある質問</span></p>
     <h2 class="display h2" data-i18n="fq.t" data-reveal>ASKED &<br>ANSWERED.</h2>
     <div class="faq-list" data-reveal></div>
   </div>
@@ -1524,7 +1524,7 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
 <!-- ================= 08 — PRICING ================= -->
 <section class="sec" id="pricing" style="border-top:1px solid var(--line);background:var(--char)">
   <div class="wrap">
-    <p class="kicker" data-reveal><span data-i18n="pr.k">08 — PRICING · 料金</span></p>
+    <p class="kicker" data-reveal><span data-i18n="pr.k">09 — PRICING · 料金</span></p>
     <h2 class="display h2" data-i18n="pr.t" data-reveal>BASED ON YOUR<br>REQUIREMENTS.</h2>
     <p class="mute" data-reveal data-i18n="pr.s" style="max-width:36em">Price is based on your requirements and goals — every plan is personal, and so is the price.</p>
     <div class="pr-list" data-reveal></div>
@@ -1538,7 +1538,7 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
 <!-- ================= 09 — START ================= -->
 <section class="sec" id="contact" style="border-top:1px solid var(--line)">
   <div class="wrap">
-    <p class="kicker" data-reveal><span data-i18n="co.k">09 — START · お問い合わせ</span></p>
+    <p class="kicker" data-reveal><span data-i18n="co.k">10 — START · お問い合わせ</span></p>
     <h2 class="display h2" data-i18n="co.t" data-reveal>READY TO GET<br>STRONGER?</h2>
     <p class="cta-jp jpd" data-reveal style="margin:.5rem 0 0">次の一歩を、ここから。</p>
     <div class="co-grid">
@@ -1592,10 +1592,10 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
           <div class="field"><label for="f-goal" data-i18n="fo.goal">YOUR GOAL</label>
             <select id="f-goal" name="goal">
               <option value="" data-i18n="fo.g0">SELECT YOUR GOAL</option>
-              <option value="muscle" data-i18n="fo.g1">BUILD MUSCLE &amp; STRENGTH — 筋力・筋肥大</option>
-              <option value="fatloss" data-i18n="fo.g2">FAT LOSS / BODY COMPOSITION — 減量・ボディメイク</option>
-              <option value="beginner" data-i18n="fo.g3">BEGINNER — START RIGHT — 初心者</option>
-              <option value="athlete" data-i18n="fo.g4">ATHLETE / POWERLIFTER — アスリート・パワーリフター</option>
+              <option value="muscle" data-i18n="fo.g1">BUILD MUSCLE &amp; STRENGTH — 筋力向上・筋肥大</option>
+              <option value="fatloss" data-i18n="fo.g2">FAT LOSS / BODY COMPOSITION — 体脂肪減少・ボディメイク</option>
+              <option value="beginner" data-i18n="fo.g3">BEGINNER — START RIGHT — 筋トレ初心者・正しい基礎作り</option>
+              <option value="athlete" data-i18n="fo.g4">ATHLETE / POWERLIFTER — 競技アスリート・パワーリフティング</option>
               <option value="nutrition" data-i18n="fo.g5">NUTRITION &amp; LIFESTYLE — 栄養・ライフスタイル</option>
               <option value="other" data-i18n="fo.g6">OTHER — その他</option>
             </select></div>
@@ -1703,23 +1703,23 @@ const PHOTOS = {
 
 /* ============ PRICING — price:'' shows ON REQUEST; set a string to publish ============ */
 const PRICING=[
- {n:'01',en:'1-ON-1 ONLINE COACHING',jpl:'オンラインパーソナルコーチング',per:'MONTHLY · FULL COACHING',
+ {n:'01',en:'1-ON-1 ONLINE COACHING',jpl:'1-on-1 完全オンラインコーチング',per:'MONTHLY · FULL COACHING',
   den:'Complete personal coaching, delivered online: a program built on your requirements and goals, weekly check-ins, direct chat, and monthly adjustments.',
-  djp:'完全オンラインのパーソナルコーチング。要望と目標に合わせた専用プログラム、週次の進捗確認、直接チャット、毎月の調整まで。',
-  fe:['CUSTOM PROGRAM','WEEKLY CHECK-INS','DIRECT CHAT','MONTHLY UPDATES'],fj:['専用プログラム','週次チェックイン','直接チャット','月次アップデート'],price:''},
- {n:'02',en:'CUSTOM PROGRAM DESIGN',jpl:'オーダーメイドプログラム',per:'ONE-TIME · YOURS TO KEEP',
+  djp:'完全個別のオンラインパーソナル指導。目標に合わせた専用プログラム、週次の進捗確認、動画フォームチェック、チャット相談、月次メニュー更新まで全て対応。',
+  fe:['CUSTOM PROGRAM','WEEKLY CHECK-INS','DIRECT CHAT','MONTHLY UPDATES'],fj:['専用プログラム','週次チェックイン','常時チャット相談','月次アップデート'],price:''},
+ {n:'02',en:'CUSTOM PROGRAM DESIGN',jpl:'オーダーメイド プログラム設計',per:'ONE-TIME · YOURS TO KEEP',
   den:'A complete personalized training program — built around your goals, equipment and schedule, explained clearly, and handed over to you.',
-  djp:'目標・環境・スケジュールに合わせた完全オーダーメイドのプログラム。設計し、丁寧に解説し、お渡しします。',
-  fe:['GOAL-SPECIFIC','EQUIPMENT-BASED','CLEAR EXPLANATION','YOURS TO KEEP'],fj:['目標別設計','環境に対応','丁寧な解説','ずっと使える'],price:''},
- {n:'03',en:'CONSULTATION & PLAN REVIEW',jpl:'相談・プランレビュー',per:'ONE-TIME · 60 MIN',
+  djp:'あなたの目標・器具環境・スケジュールに合わせて設計された完全個別トレーニングプログラム。詳細な解説付きでお渡しします。',
+  fe:['GOAL-SPECIFIC','EQUIPMENT-BASED','CLEAR EXPLANATION','YOURS TO KEEP'],fj:['目標別カスタム','器具環境に適合','丁寧な種目解説','ずっと使える'],price:''},
+ {n:'03',en:'CONSULTATION & PLAN REVIEW',jpl:'個別カウンセリング＆プラン分析',per:'ONE-TIME · 60 MIN',
   den:'A focused one-on-one online session: we define your goal, audit your current plan, and you leave with a written action plan.',
-  djp:'60分のオンライン個別セッション。目標を明確にし、現在のプランを分析し、行動計画書をお渡しします。',
-  fe:['1-ON-1 CALL','PLAN AUDIT','ACTION PLAN','EN / JP SUPPORT'],fj:['個別通話','プラン分析','行動計画書','日英対応'],price:''}];
+  djp:'60分の1対1オンライン個別相談。目標設定、現在のトレーニング・食事の課題分析、今後の具体的な行動計画書をご提案します。',
+  fe:['1-ON-1 CALL','PLAN AUDIT','ACTION PLAN','EN / JP SUPPORT'],fj:['個別オンライン通話','現状プラン詳細分析','行動計画書作成','日英対応'],price:''}];
 
 const DISCIPLINES=[
- {n:'01',en:'STRENGTH TRAINING',jpl:'筋力トレーニング',den:'Barbell-first training built on progressive overload — coached online through your personal program, video feedback and weekly check-ins. Serious muscle, raw strength, a physique that lasts.',djp:'漸進性過負荷に基づくバーベルトレーニング。専用プログラム・動画フィードバック・週次チェックインでオンライン指導します。本物の筋肉と筋力を。',mv:['SQUAT','BENCH','DEADLIFT','PRESS','ROWS']},
- {n:'02',en:'CROSSFIT & CONDITIONING',jpl:'クロスフィット・コンディショニング',den:'Circuits, kettlebells, AMRAPs — programmed for the equipment you actually have and scaled to your level. Strength that endures and an engine that actually works.',djp:'サーキット、ケトルベル、AMRAP。あなたの環境とレベルに合わせて設計します。持久する筋力と、実際に働く体を。',mv:['CIRCUITS','KETTLEBELL','AMRAP','SLED']},
- {n:'03',en:'ATHLETE & POWERLIFTER',jpl:'アスリート・パワーリフター向け',den:'Focused programming for people who train with a target — sport-specific power and speed, or SBD periodization and full meet prep for powerlifters.',djp:'目標を持って鍛える人への専用プログラム。競技特有のパワーとスピード、またはSBDのピリオダイゼーションと試合準備まで。',mv:['SPORT BLOCKS','PERIODIZATION','SBD PEAKING','MEET PREP']}];
+ {n:'01',en:'STRENGTH TRAINING',jpl:'筋力トレーニング・筋肥大',den:'Barbell-first training built on progressive overload — coached online through your personal program, video feedback and weekly check-ins. Serious muscle, raw strength, a physique that lasts.',djp:'漸進性過負荷の原則に基づくバーベルトレーニング。専用プログラム・動画フォーム分析・週次チェックインでオンライン指導。本物の筋肉と筋力を構築します。',mv:['SQUAT','BENCH','DEADLIFT','PRESS','ROWS']},
+ {n:'02',en:'CROSSFIT & CONDITIONING',jpl:'コンディショニング・持久力強化',den:'Circuits, kettlebells, AMRAPs — programmed for the equipment you actually have and scaled to your level. Strength that endures and an engine that actually works.',djp:'サーキット、ケトルベル、高強度インターバル。お持ちの器具と体力レベルに合わせて設計。持久力と機能的に動ける身体を作ります。',mv:['CIRCUITS','KETTLEBELL','AMRAP','SLED']},
+ {n:'03',en:'ATHLETE & POWERLIFTER',jpl:'アスリート・パワーリフティング',den:'Focused programming for people who train with a target — sport-specific power and speed, or SBD periodization and full meet prep for powerlifters.',djp:'明確な競技目標を持つ方のための特化プログラム。競技に必要なパワー・スピード、またはSBD（スクワット・ベンチ・デッドリフト）のピリオダイゼーションと大会調整まで対応。',mv:['SPORT BLOCKS','PERIODIZATION','SBD PEAKING','MEET PREP']}];
 
 const HOLISTIC=[
  {k:'鍛',en:'TRAINING',jp:'トレーニング',den:'The hour in the gym.',djp:'ジムの中の1時間。'},
@@ -1728,30 +1728,30 @@ const HOLISTIC=[
  {k:'休',en:'RECOVERY',jp:'回復',den:'Stress managed, rest earned.',djp:'ストレスを管理し、回復する。'}];
 
 const JOURNEY=[
- {n:'01',en:'BEGIN',jp:'はじまり',den:'First barbell, five years ago.',djp:'5年前、はじめてのバーベル。',ph:'j1',alt:'early machine training in the gym'},
- {n:'02',en:'DISCIPLINE',jp:'規律',den:'Showing up after motivation faded.',djp:'モチベーションが消えても、通い続けた。',ph:'j2',alt:'strength work by the heavy bag'},
- {n:'03',en:'TRANSFORM',jp:'変化',den:'My own body — the living proof.',djp:'自分の体が、何よりの証明。',ph:'j3',alt:'the transformation split portrait'},
- {n:'04',en:'STRENGTH',jp:'強さ',den:'Quiet corridor, heavy iron — strength became identity.',djp:'静かな廊下と重い鉄 — 強さが、自分になった。',ph:'j4',alt:'back pose in the chain corridor'},
- {n:'05',en:'PHYSIQUE',jp:'肉体',den:'Built rep by rep, meal by meal.',djp:'レップごと、食事ごとに積み上げた。',ph:'j5',alt:'studio physique portrait'},
- {n:'06',en:'COACHING',jp:'指導',den:'Now I build that structure for you — online.',djp:'今度は、あなたのために設計する。オンラインで。',ph:'j6',alt:'relaxed between sessions'}];
+ {n:'01',en:'BEGIN',jp:'はじまり',den:'First barbell, five years ago.',djp:'5年前、はじめて握ったバーベル。',ph:'j1',alt:'early machine training in the gym'},
+ {n:'02',en:'DISCIPLINE',jp:'規律',den:'Showing up after motivation faded.',djp:'モチベーションが消えても、ジムに通い続けた。',ph:'j2',alt:'strength work by the heavy bag'},
+ {n:'03',en:'TRANSFORM',jp:'変化',den:'My own body — the living proof.',djp:'自らの身体こそが、何よりの証明。',ph:'j3',alt:'the transformation split portrait'},
+ {n:'04',en:'STRENGTH',jp:'強さ',den:'Quiet corridor, heavy iron — strength became identity.',djp:'静かな空間と重い鉄。強さが自分自身のアイデンティティに。',ph:'j4',alt:'back pose in the chain corridor'},
+ {n:'05',en:'PHYSIQUE',jp:'肉体',den:'Built rep by rep, meal by meal.',djp:'1レップ、1回の食事を丁寧に積み上げた。',ph:'j5',alt:'studio physique portrait'},
+ {n:'06',en:'COACHING',jp:'指導',den:'Now I build that structure for you — online.',djp:'今度はあなたが成果を出す番。完全オンラインで伴走します。',ph:'j6',alt:'relaxed between sessions'}];
 
 const PROCESS=[
- {n:'01',en:'SHARE',jp:'伝える',den:'You tell me your goal, experience, equipment and week.',djp:'目標・経験・環境・スケジュールを教えてください。'},
- {n:'02',en:'ASSESS',jp:'分析する',den:'I study where you are — movement, habits, time.',djp:'現状を分析します。動き、習慣、時間。'},
- {n:'03',en:'BUILD',jp:'設計する',den:'Your program is designed and explained — personally.',djp:'あなた専用のプログラムを設計し、解説します。'},
- {n:'04',en:'TRAIN',jp:'実践する',den:'You train anywhere in the world. I follow every week.',djp:'どこでも実践。毎週、私がフォローします。'},
- {n:'05',en:'EVOLVE',jp:'進化させる',den:'We review results and adjust — month after month.',djp:'結果を振り返り、調整し続けます。'}];
+ {n:'01',en:'SHARE',jp:'ヒアリング',den:'You tell me your goal, experience, equipment and week.',djp:'目標・運動歴・使える器具・ライフスタイルを詳しく共有。'},
+ {n:'02',en:'ASSESS',jp:'分析・評価',den:'I study where you are — movement, habits, time.',djp:'現状の身体の動き、生活習慣、時間を丁寧に分析。'},
+ {n:'03',en:'BUILD',jp:'プログラム設計',den:'Your program is designed and explained — personally.',djp:'あなた専用のトレーニング＆栄養プランを設計し、分かりやすく解説。'},
+ {n:'04',en:'TRAIN',jp:'実践＆サポート',den:'You train anywhere in the world. I follow every week.',djp:'世界中どこでも実践。毎週のチェックインと動画フィードバックでフォロー。'},
+ {n:'05',en:'EVOLVE',jp:'振り返り＆進化',den:'We review results and adjust — month after month.',djp:'進捗に合わせて毎月プランをアップデートし、着実に目標達成へ。'}];
 
 /* NOTE: apostrophes inside these strings use the typographic ’ character —
    a straight ' would break the JavaScript. */
 const FAQ=[
- {qe:'How does online coaching actually work?',qj:'オンラインコーチングはどう進みますか？',ae:'We start with your goal, experience, equipment and schedule. I design your program, you train wherever you are, and we check in every week — adjusting the plan as you progress. Everything happens online, at your pace.',aj:'まず目標・経験・環境・スケジュールを伺います。私がプログラムを設計し、あなたはどこでも実践。毎週チェックインで振り返り、進捗に合わせて調整します。すべてオンラインで、あなたのペースで。'},
- {qe:'What equipment do I need?',qj:'器具は何が必要ですか？',ae:'Whatever you have — the plan is built around it. A full gym, one pair of dumbbells at home, or bodyweight only: the program adapts to your environment, never the other way around.',aj:'あるもので大丈夫。プログラムを環境に合わせます。フルジムでも、家のダンベル1組でも、自重だけでも。あなたの環境に合わせて設計します。'},
- {qe:'I’m a complete beginner — is this for me?',qj:'初心者でも大丈夫ですか？',ae:'Yes — beginners are exactly who I coach best. Technique, structure, and habits you can actually keep — taught step by step, at your pace, never mine.',aj:'はい。むしろ初心者こそ、いちばん大切に指導します。フォーム、組み立て方、続けられる習慣から、あなたのペースで一歩ずつ。'},
- {qe:'What’s included in coaching?',qj:'コーチングには何が含まれますか？',ae:'More than workouts: your training plan, plus nutrition habits, lifestyle structure and stress & recovery guidance — one system, delivered online.',aj:'トレーニングだけでなく、栄養習慣、生活リズム、ストレスと回復まで。ひとつのシステムとしてオンラインでご提供します。'},
- {qe:'How much does it cost?',qj:'料金はいくらですか？',ae:'Pricing is based on your requirements and goals — every plan is personal, and so is the price. Tell me your goal and I’ll reply with the exact cost of your plan. No hidden fees, ever.',aj:'料金は、あなたの要望と目標によって決まります。プランも、料金も、完全にパーソナル。目標を教えていただければ、正確な料金をお伝えします。隠れた費用は一切ありません。'},
- {qe:'Can we communicate in Japanese?',qj:'日本語でやり取りできますか？',ae:'I’m actively studying Japanese — simple, careful Japanese together with English, prepared thoroughly before every session.',aj:'日本語を勉強中です。やさしい日本語と英語を併用し、毎回事前にしっかり準備して臨みます。'},
- {qe:'Which countries do you coach?',qj:'どの国のクライアントでも大丈夫ですか？',ae:'Coaching is 100% online, so anywhere in the world. Japanese clients are especially welcome — every session is prepared with simple Japanese and English.',aj:'指導は100%オンラインなので、世界中どこでも対応します。日本のクライアントは特に歓迎します — セッションはやさしい日本語と英語で準備します。'}];
+ {qe:'How does online coaching actually work?',qj:'オンラインコーチングはどのように進みますか？',ae:'We start with your goal, experience, equipment and schedule. I design your program, you train wherever you are, and we check in every week — adjusting the plan as you progress. Everything happens online, at your pace.',aj:'まず目標・運動経験・器具環境・スケジュールをヒアリングします。あなた専用のプログラムを作成し、どこでも実践可能。毎週のチェックインで振り返り、進捗に合わせてメニューを調整します。すべてオンラインで、あなたのペースで進められます。'},
+ {qe:'What equipment do I need?',qj:'どのような器具が必要ですか？',ae:'Whatever you have — the plan is built around it. A full gym, one pair of dumbbells at home, or bodyweight only: the program adapts to your environment, never the other way around.',aj:'現在お持ちの環境に合わせて作成します。フル設備のジム、自宅のダンベル1組、あるいは自重のみでも大丈夫です。あなたの環境に合わせてメニューを最適化します。'},
+ {qe:'I’m a complete beginner — is this for me?',qj:'筋トレ完全初心者でも大丈夫ですか？',ae:'Yes — beginners are exactly who I coach best. Technique, structure, and habits you can actually keep — taught step by step, at your pace, never mine.',aj:'大歓迎です。むしろ初心者の方こそ、怪我を防ぎ正しいフォームと習慣を身につけるために最適です。基礎から一歩ずつ丁寧にサポートします。'},
+ {qe:'What’s included in coaching?',qj:'コーチングには何が含まれますか？',ae:'More than workouts: your training plan, plus nutrition habits, lifestyle structure and stress & recovery guidance — one system, delivered online.',aj:'トレーニングメニューだけでなく、日々の栄養アドバイス、生活リズムの改善、休養とストレス管理まで、トータルシステムとして完全オンラインで提供します。'},
+ {qe:'How much does it cost?',qj:'料金はいくらですか？',ae:'Pricing is based on your requirements and goals — every plan is personal, and so is the price. Tell me your goal and I’ll reply with the exact cost of your plan. No hidden fees, ever.',aj:'料金はご希望のサポート内容や目標期間によって決まります。目標をお聞かせいただければ、最適なプランと正確な料金をお伝えします。隠れた追加費用などは一切ありません。'},
+ {qe:'Can we communicate in Japanese?',qj:'日本語でのやり取りは可能ですか？',ae:'I’m actively studying Japanese — simple, careful Japanese together with English, prepared thoroughly before every session.',aj:'日本語を熱心に勉強中です。やさしい日本語と英語を併用し、事前にメッセージをしっかり確認して丁寧に対応いたしますのでご安心ください。'},
+ {qe:'Which countries do you coach?',qj:'日本国外からの受講も可能ですか？',ae:'Coaching is 100% online, so anywhere in the world. Japanese clients are especially welcome — every session is prepared with simple Japanese and English.',aj:'100%オンライン指導ですので、日本はもちろん世界中どこからでも受講いただけます。時差に合わせて柔軟に対応いたします。'}];
 
 const GALLERY=[
  {ph:'g1',cap:'THE POSTER WALL'},
@@ -1767,17 +1767,17 @@ const GALLERY=[
 /* BODY MAP — now with MOVES: what the muscle actually does */
 const BODY={
  front:{
-  sh:{en:'SHOULDERS',jp:'肩 — SHOULDERS',k:'肩',den:'Overhead pressing strength and stability — strict, full range.',djp:'プレスの強さと肩の安定性。フルレンジで厳格に。',fn:'Pressing overhead · raising your arms to the side',fnj:'頭上へのプレス・腕を横に上げる動作',mv:['OVERHEAD PRESS','LATERAL RAISE','FACE PULL']},
-  rA:{en:'CHEST',jp:'胸 — CHEST',k:'胸',den:'Controlled pressing — flat, incline and flys, full stretch, no ego.',djp:'コントロールされたプレス。フラット・インクライン・フライを可動域一杯に。',fn:'Pressing forward · pushing doors · hugging motions',fnj:'前方へのプレス・押す動作・抱きしめる動作',mv:['BENCH PRESS','INCLINE PRESS','DIPS','CABLE FLY']},
-  rB:{en:'CORE',jp:'体幹 — CORE',k:'体幹',den:'Bracing, anti-rotation and carries — the base of everything.',djp:'ブレーシング、アンチローテーション、キャリー。すべての土台。',fn:'Bracing · twisting · bending · carrying loads',fnj:'体を支える・ひねる・曲げる・重さを運ぶ',mv:['PLANK','HANGING LEG RAISE','PALLOF PRESS','CARRIES']},
-  ar:{en:'ARMS',jp:'腕 — ARMS',k:'腕',den:'Biceps, triceps, forearms — strict form, controlled tempo.',djp:'二頭筋・三頭筋・前腕。厳格なフォームで。',fn:'Pulling objects closer · curling · pressing down',fnj:'引き寄せる・持ち上げる・押し下げる動作',mv:['BARBELL CURL','PRESSDOWN','CLOSE-GRIP PRESS','HAMMER CURL']},
-  lg:{en:'LEGS',jp:'脚 — LEGS',k:'脚',den:'The foundation. Squats, hinges, lunges — non-negotiable.',djp:'体の土台。スクワット、ヒンジ、ランジ。省略しない。',fn:'Squatting down · standing up · stepping · jumping',fnj:'しゃがむ・立つ・踏み出す・跳ぶ',mv:['SQUAT','ROMANIAN DEADLIFT','LUNGE','LEG PRESS']}},
+  sh:{en:'SHOULDERS',jp:'肩 (三角筋前部・中部)',k:'肩',den:'Overhead pressing strength and stability — strict, full range.',djp:'頭上へのプレスの安定性と力強い肩幅をつくる。フルレンジで正確に。',fn:'Pressing overhead · raising your arms to the side',fnj:'頭上へのプレス・腕を横に上げる動作',mv:['OVERHEAD PRESS','LATERAL RAISE','FACE PULL']},
+  rA:{en:'CHEST',jp:'胸 (大胸筋)',k:'胸',den:'Controlled pressing — flat, incline and flys, full stretch, no ego.',djp:'コントロールされたプレス。フラット・インクライン・フライを可動域いっぱいに。',fn:'Pressing forward · pushing doors · hugging motions',fnj:'前方へ押す動作・腕を閉じる動作',mv:['BENCH PRESS','INCLINE PRESS','DIPS','CABLE FLY']},
+  rB:{en:'CORE',jp:'体幹 (腹筋群)',k:'体幹',den:'Bracing, anti-rotation and carries — the base of everything.',djp:'ブレーシング、アンチローテーション、キャリー。すべての動きの土台。',fn:'Bracing · twisting · bending · carrying loads',fnj:'身体を支える・ひねる・重さを運ぶ動作',mv:['PLANK','HANGING LEG RAISE','PALLOF PRESS','CARRIES']},
+  ar:{en:'ARMS',jp:'腕 (上腕二頭筋・前腕)',k:'腕',den:'Biceps, triceps, forearms — strict form, controlled tempo.',djp:'上腕二頭筋・前腕。反動を使わず、厳格なフォームとテンポで。',fn:'Pulling objects closer · curling · pressing down',fnj:'引き寄せる・持ち上げる動作',mv:['BARBELL CURL','PRESSDOWN','CLOSE-GRIP PRESS','HAMMER CURL']},
+  lg:{en:'LEGS',jp:'脚 (大腿四頭筋)',k:'脚',den:'The foundation. Squats, hinges, lunges — non-negotiable.',djp:'身体の強靭な土台。スクワット、ランジ。妥協なく鍛える。',fn:'Squatting down · standing up · stepping · jumping',fnj:'しゃがむ・立ち上がる・踏み出す動作',mv:['SQUAT','ROMANIAN DEADLIFT','LUNGE','LEG PRESS']}},
  back:{
-  sh:{en:'REAR SHOULDERS',jp:'肩(後部) — REAR DELTS',k:'肩',den:'Rear-delt work for balance and healthy pressing.',djp:'バランスと肩の健康のためのリアデルタ。',fn:'Pulling your arms back · opening them wide',fnj:'腕を後ろへ引く・大きく開く動作',mv:['REVERSE FLY','FACE PULL','BAND PULL-APART']},
-  rA:{en:'BACK',jp:'背中 — BACK',k:'背中',den:'Rows, pull-ups, pulldowns — the frame of the body.',djp:'ローイング、プルアップ、ラットプルダウン。体のフレーム。',fn:'Pulling things toward you · pulling yourself up · posture',fnj:'手前に引く・体を引き上げる・姿勢を支える',mv:['PULL-UP','BARBELL ROW','LAT PULLDOWN','SEATED ROW']},
-  rB:{en:'LOWER BACK',jp:'腰 — LOWER BACK',k:'腰',den:'Hinges, back extensions, bracing drills.',djp:'ヒンジ種目、バックエクステンション、ブレーシング。',fn:'Bending forward · lifting from the floor · standing tall',fnj:'前傾・床から持ち上げる・直立を保つ',mv:['DEADLIFT','BACK EXTENSION','GOOD MORNING']},
-  ar:{en:'ARMS',jp:'腕(三頭筋) — TRICEPS',k:'腕',den:'Triceps do half your pressing — they earn direct work.',djp:'プレスの半分は三頭筋の仕事。',fn:'Straightening your elbows · every push',fnj:'肘を伸ばす・すべての押す動作',mv:['SKULL CRUSHER','PRESSDOWN','OVERHEAD EXTENSION']},
-  lg:{en:'HAMSTRINGS & GLUTES',jp:'裏もも・臀筋',k:'脚',den:'The engine — hinges and bridges.',djp:'力のエンジン。ヒンジとブリッジで。',fn:'Hip extension · sprinting · climbing stairs',fnj:'股関節を伸ばす・疾走・階段の上り',mv:['ROMANIAN DEADLIFT','HIP THRUST','NORDIC CURL','LEG CURL']}}};
+  sh:{en:'REAR SHOULDERS',jp:'肩後部 (リアデルト)',k:'肩',den:'Rear-delt work for balance and healthy pressing.',djp:'肩の健康と前後の筋力バランスを保つための必須部位。',fn:'Pulling your arms back · opening them wide',fnj:'腕を後方に引く・大きく開く動作',mv:['REVERSE FLY','FACE PULL','BAND PULL-APART']},
+  rA:{en:'BACK',jp:'背中 (広背筋・僧帽筋)',k:'背中',den:'Rows, pull-ups, pulldowns — the frame of the body.',djp:'懸垂、ローイング、ラットプルダウン。逆三角形のたくましい上半身をつくる。',fn:'Pulling things toward you · pulling yourself up · posture',fnj:'引く動作・身体を引き上げる・姿勢維持',mv:['PULL-UP','BARBELL ROW','LAT PULLDOWN','SEATED ROW']},
+  rB:{en:'LOWER BACK',jp:'腰 (脊柱起立筋)',k:'腰',den:'Hinges, back extensions, bracing drills.',djp:'デッドリフト、バックエクステンション。重い負荷に耐えうる強靭な体幹背面。',fn:'Bending forward · lifting from the floor · standing tall',fnj:'前屈から起き上がる・床から持ち上げる・直立維持',mv:['DEADLIFT','BACK EXTENSION','GOOD MORNING']},
+  ar:{en:'ARMS',jp:'腕 (上腕三頭筋)',k:'腕',den:'Triceps do half your pressing — they earn direct work.',djp:'プレスの出力の半分を担う三頭筋。ダイレクトに負荷をかける。',fn:'Straightening your elbows · every push',fnj:'肘を伸ばす・すべての押す動作',mv:['SKULL CRUSHER','PRESSDOWN','OVERHEAD EXTENSION']},
+  lg:{en:'HAMSTRINGS & GLUTES',jp:'ハムストリングス・臀筋',k:'脚',den:'The engine — hinges and bridges.',djp:'身体の推進力となるエンジン。ヒンジ種目とヒップスラストで強化。',fn:'Hip extension · sprinting · climbing stairs',fnj:'股関節を伸ばす・走る・階段を上る動作',mv:['ROMANIAN DEADLIFT','HIP THRUST','NORDIC CURL','LEG CURL']}}};
 
 /* ================= I18N ================= */
 const T={
@@ -1786,35 +1786,39 @@ en:{'nav.quote':'DISCIPLINE OVER MOTIVATION',
 'hero.kicker':'ABHISHEK — ONLINE PERSONAL TRAINER &amp; COACH','hero.l1':'BUILD','hero.l2':'YOUR','hero.l3':'STRONGER','hero.l4':'SELF.','hero.sub':'ONLINE COACHING · STRENGTH · CONDITIONING · NUTRITION · LIFESTYLE','hero.badge':'ONLINE COACHING · BUILT AROUND YOUR GOALS','hero.scroll':'SCROLL','hero.coords':'ONLINE COACHING · WORLDWIDE · 5+ YEARS',
 'about.k':'01 — WHO · 私について','who.st':'For five years I have lived one system — training, food, sleep, mindset — and today I coach it fully online. Every program is built around your requirements, your equipment, and your goals. No templates, no shortcuts — just what works for you.','who.m1':'TRAINER','who.m2':'FOCUS','who.m2v':'Online coaching · Strength · Full system','who.m4':'EXPERIENCE','who.m4v':'5+ years',
 'fk.r1':'EXPERIENCE','fk.v1':'5+ years of training, bodybuilding &amp; coaching practice','fk.r6':'DELIVERY','fk.v6':'100% online — coaching clients anywhere in the world','fk.r2':'SPECIALIZATION','fk.v2':'Strength · Conditioning · Athlete / Powerlifter · Beginners','fk.r7':'COACHING MODEL','fk.v7':'Every plan designed on the client’s requirements and goals','fk.r4':'LANGUAGES','fk.v4':'English — fluent &nbsp;/&nbsp; 日本語 — studying, improving weekly',
+'vid.k':'MEET THE COACH · 自己紹介','vid.t':'TRAIN WITH SOMEONE<br>WHO LIVES THE WORK.','vid.s':'Watch my self-introduction — my 5-year journey, coaching philosophy, and what working with me 100% online looks like.','vm.t':'INTRODUCTION VIDEO READY','vm.s':'Video player is ready and integrated. Once you provide your video file or YouTube / Vimeo link, it will play here in full HD.',
 'tr.k':'02 — WHAT I COACH · 指導内容','tr.t':'BUILT AROUND<br>YOUR GOALS.','tr.s':'I coach three disciplines online — every program shaped to your requirements, equipment and schedule. Click each to open.',
 'ho.k':'THE OTHER 23 HOURS — 残りの23時間','ho.t':'ONE HOUR HERE.<br>TWENTY-THREE EVERYWHERE.',
-'pr.k':'08 — PRICING · 料金','pr.t':'BASED ON YOUR<br>REQUIREMENTS.','pr.s':'Price is based on your requirements and goals — every plan is personal, and so is the price.','pr.onreq':'ON REQUEST','pr.note':'Tell me your goal and I’ll reply with the exact price for your plan — no packages pushed, no hidden fees.',
 'jr.k':'03 — THE JOURNEY · 道のり','jr.title':'BUILT,<br>NOT BORN.','jr.s':'Five years in six frames — keep scrolling to walk through it.','jr.hint':'SCROLL TO TRAVEL — スクロールで進む',
 'ph.k':'04 — THE METHOD · 進め方','ph.l1':'DISCIPLINE','ph.l2':'OVER','ph.l3':'MOTIVATION.','ph.p1':'CONSISTENCY','ph.p2':'PROGRESS','ph.p3':'HABIT','ph.p4':'LIFESTYLE',
 'pc.k':'HOW ONLINE COACHING WORKS — オンライン指導の流れ','pc.t':'FIVE STEPS.<br>ZERO GUESSWORK.',
 'bm.k':'05 — FOCUS · 鍛える部位','bm.t':'EVERY REP<br>HAS A REASON.','bm.s':'Tap any muscle group you want to view — front or back — and see how I train it and what it moves.','bm.hint':'TAP ANY MUSCLE GROUP','bm.moves':'MOVES','bm.front':'FRONT','bm.back':'BACK','bm.note':'Educational overview only — your plan is always designed personally. 医療アドバイスではありません。',
 'ga.k':'06 — THE WORK · 記録','ga.t':'SEEN,<br>NOT SAID.','ga.s':'It moves on its own — hover to pause, drag to steer, click any photo to open.',
-'fq.k':'07 — QUESTIONS · よくある質問','fq.t':'ASKED &<br>ANSWERED.',
-'co.k':'09 — START · お問い合わせ','co.t':'READY TO GET<br>STRONGER?','co.ch':'REACH ME DIRECTLY.','co.fh':'OR WRITE BELOW.','co.n':'One tap opens a direct chat — I reply within 48 hours, usually much sooner.',
+'ts.k':'07 — CLIENT RESULTS · 受講生の声と実績','ts.t':'REAL PEOPLE.<br>REAL STRENGTH.','ts.s':'Real transformations and feedback from clients who built strength, lost body fat, and developed habits that endure for life.','ts.q1':'“Abhishek designed my plan around my busy Tokyo work schedule and a basic local gym. He reviews my lifting form videos every week and gives precise feedback. In 6 months I built more muscle than in 3 years training on my own.”','ts.q2':'“No generic templates. Abhishek listened to my past shoulder issues and built a custom pressing routine that let me bench pain-free while packing on serious size. The weekly check-ins kept me 100% accountable.”','ts.q3':'“As a complete beginner who was nervous about gym training, Abhishek made everything approachable. He taught me compound lifts step by step and helped me fix my nutrition without extreme dieting.”','ts.q4':'“Abhishek’s understanding of periodization and fatigue management is top-tier. His Japanese communication is very clear and supportive. Best investment I’ve made in my athletic journey.”','ts.t1':'CUSTOM DESIGNED','ts.t2':'CLIENT SATISFACTION','ts.t3':'FEEDBACK RESPONSE','ts.t4':'WORLDWIDE SUPPORT',
+'fq.k':'08 — QUESTIONS · よくある質問','fq.t':'ASKED &amp;<br>ANSWERED.',
+'pr.k':'09 — PRICING · 料金','pr.t':'BASED ON YOUR<br>REQUIREMENTS.','pr.s':'Price is based on your requirements and goals — every plan is personal, and so is the price.','pr.onreq':'ON REQUEST','pr.note':'Tell me your goal and I’ll reply with the exact price for your plan — no packages pushed, no hidden fees.',
+'co.k':'10 — START · お問い合わせ','co.t':'READY TO GET<br>STRONGER?','co.ch':'REACH ME DIRECTLY.','co.fh':'OR WRITE BELOW.','co.n':'One tap opens a direct chat — I reply within 48 hours, usually much sooner.',
 'fo.name':'NAME','fo.namep':'Your name','fo.age':'AGE','fo.mail':'EMAIL','fo.goal':'YOUR GOAL','fo.g0':'SELECT YOUR GOAL','fo.g1':'BUILD MUSCLE &amp; STRENGTH — 筋力・筋肥大','fo.g2':'FAT LOSS / BODY COMPOSITION — 減量・ボディメイク','fo.g3':'BEGINNER — START RIGHT — 初心者','fo.g4':'ATHLETE / POWERLIFTER — アスリート・パワーリフター','fo.g5':'NUTRITION &amp; LIFESTYLE — 栄養・ライフスタイル','fo.g6':'OTHER — その他','fo.msg':'MESSAGE — OPTIONAL','fo.msgp':'Your goal, your experience, where you train — a few lines help me prepare.','fo.send':'SEND MESSAGE','fo.ename':'Please tell me your name.','fo.eage':'Please enter a valid age.','fo.email':'Please enter a valid email address.','fo.okt':'MESSAGE RECEIVED.',
 'ft.top':'BACK TO TOP','ft.line':'BUILD YOUR STRONGER SELF.'},
-jp:{'nav.quote':'規律こそ、力。',
+jp:{'nav.quote':'モチベーションより、規律。',
 'cta.start':'オンライン指導を始める','cta.explore':'指導の流れを見る',
-'hero.kicker':'ABHISHEK — オンラインパーソナルトレーナー','hero.l1':'より強い','hero.l2':'自分を、','hero.l3':'つくる。','hero.l4':'','hero.sub':'オンライン指導 · 筋力 · コンディショニング · 栄養 · ライフスタイル','hero.badge':'オンライン指導 · 目標から逆算して設計','hero.scroll':'スクロール','hero.coords':'オンライン指導 · 世界中 · 5年以上',
-'about.k':'01 — 私について · WHO','who.st':'私の名前は「力を与える」という意味です。5年間、トレーニング・食事・睡眠・思考をひとつのシステムとして実践してきました。今はそれを完全オンラインで指導します。すべてのプログラムは、あなたの要望・環境・目標からつくります。','who.m1':'トレーナー','who.m2':'専門','who.m2v':'オンライン指導 · 筋力 · トータルシステム','who.m4':'経験','who.m4v':'5年以上',
-'fk.r1':'経験','fk.v1':'トレーニング・ボディビル・指導歴 5年以上','fk.r6':'指導形式','fk.v6':'100%オンライン — 世界中のクライアントを対応','fk.r2':'専門分野','fk.v2':'筋力 · コンディショニング · アスリート/パワーリフター · 初心者','fk.r7':'指導モデル','fk.v7':'すべてのプランを、クライアントの要望と目標から設計','fk.r4':'言語','fk.v4':'英語 — 流暢 &nbsp;/&nbsp; 日本語 — 勉強中（週ごとに上達）',
-'tr.k':'02 — 指導内容 · WHAT I COACH','tr.t':'目標から、<br>逆算して設計。','tr.s':'3つの分野をオンラインで指導します。すべてのプログラムは、あなたの要望・環境・スケジュールに合わせて設計。クリックで開きます。',
-'ho.k':'残りの23時間 — THE OTHER 23 HOURS','ho.t':'1時間はジムで。<br>23時間は日々の中で。',
-'pr.k':'08 — 料金 · PRICING','pr.t':'要望と目標で、<br>決まる料金。','pr.s':'料金は、あなたの要望と目標によって決まります。プランも、料金も、完全にパーソナルです。','pr.onreq':'お問い合わせ','pr.note':'目標を教えてください。あなた専用プランの正確な料金をお伝えします。押し売りも、隠れた費用もありません。',
-'jr.k':'03 — 道のり · THE JOURNEY','jr.title':'体は、<br>つくるもの。','jr.s':'5年の積み重ねを、6つの場面で。スクロールで辿ってください。','jr.hint':'スクロールで進む — SCROLL',
+'hero.kicker':'ABHISHEK — オンラインパーソナルトレーナー＆コーチ','hero.l1':'より強い','hero.l2':'自分を、','hero.l3':'つくる。','hero.l4':'','hero.sub':'オンライン指導 · 筋力強化 · コンディショニング · 栄養 · ライフスタイル','hero.badge':'完全個別指導 · あなたの目標から逆算して設計','hero.scroll':'スクロール','hero.coords':'オンライン指導 · 世界中対応 · 実践歴5年以上',
+'about.k':'01 — 私について · ABOUT ME','who.st':'5年間、トレーニング・食事・睡眠・マインドセットをひとつの統合システムとして実践してきました。現在はそれを完全オンラインで指導しています。すべてのプログラムは、あなたの要望・器具環境・目標に合わせて個別に設計します。テンプレートや近道ではなく、あなたに本当に効果のあるものだけをお届けします。','who.m1':'トレーナー','who.m2':'指導領域','who.m2v':'オンライン指導 · 筋力強化 · トータルシステム','who.m4':'実践・指導歴','who.m4v':'5年以上',
+'fk.r1':'実績・経験','fk.v1':'トレーニング・ボディビル・指導歴 5年以上','fk.r6':'指導形式','fk.v6':'100%オンライン — 世界中のクライアントに対応','fk.r2':'指導分野','fk.v2':'筋力強化 · コンディショニング · アスリート/パワーリフター · 初心者','fk.r7':'指導方針','fk.v7':'一人ひとりの目標・ライフスタイルに合わせた完全オーダーメイド設計','fk.r4':'対応言語','fk.v4':'英語（流暢） &nbsp;/&nbsp; 日本語（熱心に学習中・丁寧に対応）',
+'vid.k':'自己紹介 · MEET THE COACH','vid.t':'本気で体現する、<br>指導者とともに。','vid.s':'5年間の道のり、指導理念、そして100%オンラインでどのようにサポートするかを動画でご紹介します。','vm.t':'自己紹介動画（準備中）','vm.s':'動画プレイヤーの準備が完了しています。動画リンクまたはファイルをご提供いただき次第、こちらで高画質再生されます。',
+'tr.k':'02 — 指導内容 · WHAT I COACH','tr.t':'あなたの目標に、<br>合わせて設計。','tr.s':'3つの専門分野をオンラインで指導します。あなたの目標・設備・スケジュールに合わせて個別にプランを構築します。各項目をタップして詳細をご覧ください。',
+'ho.k':'残りの23時間 — THE OTHER 23 HOURS','ho.t':'ジムでの1時間。<br>日常の23時間。',
+'jr.k':'03 — 道のり · THE JOURNEY','jr.title':'体は生まれつきではなく、<br>つくるもの。','jr.s':'5年間の軌跡を6つの場面で。スクロールしてご覧ください。','jr.hint':'スクロールで進む — SCROLL',
 'ph.k':'04 — 進め方 · THE METHOD','ph.l1':'規律が、','ph.l2':'モチベーションに','ph.l3':'勝る。','ph.p1':'継続','ph.p2':'成長','ph.p3':'習慣','ph.p4':'生活',
-'pc.k':'オンライン指導の流れ — HOW IT WORKS','pc.t':'五つのステップ。<br>迷いはゼロ。',
-'bm.k':'05 — 鍛える部位 · FOCUS','bm.t':'全ての種目に、<br>理由がある。','bm.s':'見たい部位（表・裏）をタップすると、鍛え方と、その部位が担当する動きが表示されます。','bm.hint':'部位をタップ','bm.moves':'動き','bm.front':'フロント','bm.back':'BACK','bm.note':'教育的な解説です。個別プランはあなたのために設計します。医療アドバイスではありません。',
-'ga.k':'06 — 記録 · THE WORK','ga.t':'語るより、<br>見る。','ga.s':'自動的に流れます。マウスで停止、ドラッグで操作、クリックで拡大。',
-'fq.k':'07 — よくある質問 · QUESTIONS','fq.t':'質問と回答。',
-'co.k':'09 — はじめる · START','co.t':'さあ、<br>強くなる<br>時です。','co.ch':'直接連絡する。','co.fh':'または、下記のフォームから。','co.n':'タップで直接連絡できます。48時間以内に、私自身がご返信します。',
-'fo.name':'お名前','fo.namep':'お名前','fo.age':'年齢','fo.mail':'メールアドレス','fo.goal':'目標','fo.g0':'目標を選択してください','fo.g1':'筋力・筋肥大 — STRENGTH','fo.g2':'減量・ボディメイク — FAT LOSS','fo.g3':'初心者・はじめて — BEGINNER','fo.g4':'アスリート・パワーリフター — ATHLETE','fo.g5':'栄養・ライフスタイル — NUTRITION','fo.g6':'その他 — OTHER','fo.msg':'メッセージ（任意）','fo.msgp':'目標・経験・普段どこで運動しているか。数行で構いません。','fo.send':'メッセージを送る','fo.ename':'お名前を教えてください。','fo.eage':'有効な年齢を入力してください。','fo.email':'有効なメールアドレスを入力してください。','fo.okt':'受け付けました。',
-'ft.top':'トップへ戻る','ft.line':'より強い自分を、つくる。'}};
+'pc.k':'オンライン指導の流れ — HOW IT WORKS','pc.t':'5つのステップ。<br>迷わず進める。',
+'bm.k':'05 — 鍛える部位 · FOCUS','bm.t':'全ての種目に、<br>明確な理由がある。','bm.s':'気になる部位（前面・背面）をタップすると、指導方針と担当する動作が表示されます。','bm.hint':'部位をタップ','bm.moves':'主な種目','bm.front':'前面','bm.back':'背面','bm.note':'※参考用の解説です。実際のプランは個々の目標・身体に合わせて設計します。医療行為ではありません。',
+'ga.k':'06 — 記録 · THE WORK','ga.t':'言葉以上に、<br>結果で語る。','ga.s':'自動でスクロールします。マウスホバーで一時停止、ドラッグで操作、写真をタップで拡大。',
+'ts.k':'07 — 受講生の実績と声 · CLIENT RESULTS','ts.t':'確かな変化と、<br>受講生の実績。','ts.s':'筋力向上、体脂肪減少、一生続く習慣を手に入れた受講生の方々のリアルな声と変化です。','ts.q1':'「仕事が忙しくても続けられるメニューを組んでくれました。毎週のフォーム確認と食事のアドバイスが的確で、6ヶ月で過去最高の身体になりました。」','ts.q2':'「テンプレートではなく、過去の肩の違和感に配慮した専用メニューを作成してくれました。毎週の進捗管理のおかげで、怪我なく自己記録を更新できました。」','ts.q3':'「完全な筋トレ初心者でしたが、丁寧な指導で不安なく始められました。無理な食事制限もなく、健康的な習慣が自然と身につきました。」','ts.q4':'「ピリオダイゼーションと疲労管理の理論が素晴らしいです。日本語でもわかりやすくサポートしてくれます。本格的に強くなりたい人に全力でおすすめします。」','ts.t1':'完全オーダーメイド','ts.t2':'受講生満足度','ts.t3':'48時間以内返答','ts.t4':'世界中どこでも対応',
+'fq.k':'08 — よくある質問 · FAQ','fq.t':'よくあるご質問と回答。',
+'pr.k':'09 — 料金プラン · PRICING','pr.t':'あなたの要望に、<br>合わせた料金体系。','pr.s':'料金はあなたの目標と必要なサポート内容に基づいて個別に設定されます。','pr.onreq':'お問い合わせ','pr.note':'目標を教えていただければ、あなた専用プランの正確な料金をお伝えします。不要なプランの押し売りや隠れた費用は一切ありません。',
+'co.k':'10 — お問い合わせ · START','co.t':'理想の身体へ、<br>最初の一歩を。','co.ch':'直接チャットで相談する','co.fh':'または下記フォームからお問い合わせ','co.n':'ワンタップで直接メッセージを送れます。通常24〜48時間以内に私自身が返信いたします。',
+'fo.name':'お名前','fo.namep':'お名前をご入力ください','fo.age':'ご年齢','fo.mail':'メールアドレス','fo.goal':'あなたの目標','fo.g0':'目標を選択してください','fo.g1':'筋力向上・筋肥大 — STRENGTH','fo.g2':'体脂肪減少・ボディメイク — FAT LOSS','fo.g3':'筋トレ初心者・正しい基礎作り — BEGINNER','fo.g4':'競技アスリート・パワーリフティング — ATHLETE','fo.g5':'食事栄養指導・生活習慣改善 — NUTRITION','fo.g6':'その他 — OTHER','fo.msg':'ご質問・メッセージ（任意）','fo.msgp':'目標、現在の運動歴、普段利用しているジム環境など、ご自由にご記入ください。','fo.send':'メッセージを送信する','fo.ename':'お名前を入力してください。','fo.eage':'有効な年齢を入力してください。','fo.email':'有効なメールアドレスを入力してください。','fo.okt':'お問い合わせを受け付けました。',
+'ft.top':'ページ上部へ戻る','ft.line':'より強く、自信に満ちた身体をあなたに。'}}
 
 /* ================= HELPERS ================= */
 const $=(s,c)=>{try{return (c||document).querySelector(s)}catch(e){return null}};
