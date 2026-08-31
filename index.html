@@ -501,27 +501,44 @@ body[data-lang=jp] .ho-cell p{font-family:var(--fjp)}
 
 /* JOURNEY */
 .j-stage{overflow:hidden;width:100%;position:relative}
-html.has-st .j-stage{min-height:100vh;display:flex;align-items:center;padding:clamp(20px,3.5vh,40px) 0;box-sizing:border-box}
-@supports(height:1svh){html.has-st .j-stage{min-height:100svh}}
-.j-track{display:flex;gap:clamp(2rem,3.8vw,3.6rem);padding:0 5vw;width:max-content;align-items:flex-start;will-change:transform}
-.j-card{
- width:min(78vw,440px);
- flex:none;
- position:relative;
- padding-top:1.8rem;
- transition:transform .4s var(--ease);
+html.has-st .j-stage{
+ min-height:100vh;
+ min-height:100svh;
+ display:flex;
+ align-items:center;
+ justify-content:flex-start;
+ padding:74px 0 20px;
  box-sizing:border-box;
 }
-@media(hover:hover){.j-card:hover{transform:translateY(-6px)}}
+.j-track{
+ display:flex;
+ gap:clamp(2rem,3.8vw,3.6rem);
+ padding:0 5vw;
+ width:max-content;
+ align-items:flex-start;
+ will-change:transform;
+}
+.j-card{
+ width:auto;
+ flex:none;
+ position:relative;
+ padding-top:1rem;
+ transition:transform .4s var(--ease);
+ box-sizing:border-box;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+}
+@media(hover:hover){.j-card:hover{transform:translateY(-5px)}}
 .j-num{
  position:absolute;
- top:-1rem;
- left:-.9rem;
+ top:-.8rem;
+ left:-.8rem;
  font-family:var(--fd);
  font-weight:900;
  font-stretch:120%;
  font-variation-settings:"wdth" 120;
- font-size:clamp(4.8rem,9.5vw,7.5rem);
+ font-size:clamp(3.8rem,7vw,5.6rem);
  line-height:1;
  color:transparent;
  -webkit-text-stroke:1px rgba(236,232,225,.18);
@@ -529,17 +546,19 @@ html.has-st .j-stage{min-height:100vh;display:flex;align-items:center;padding:cl
  pointer-events:none;
 }
 @supports not (-webkit-text-stroke:1px black){.j-num{color:rgba(236,232,225,.08)}}
-.j-card:nth-child(even){margin-top:1.6rem}
+.j-card:nth-child(even){margin-top:.6rem}
 .j-ph{
  aspect-ratio:4/5;
- width:100%;
- height:auto;
+ height:clamp(260px,calc(100vh - 220px),460px);
+ height:clamp(260px,calc(100svh - 220px),460px);
+ width:auto;
+ max-width:min(80vw,368px);
  position:relative;
  z-index:1;
  background:var(--char);
  overflow:hidden;
  border:1px solid var(--line2);
- box-shadow:0 16px 48px rgba(0,0,0,.5);
+ box-shadow:0 14px 42px rgba(0,0,0,.5);
 }
 .j-ph img{
  width:100%;
@@ -552,36 +571,38 @@ html.has-st .j-stage{min-height:100vh;display:flex;align-items:center;padding:cl
  position:absolute;
  z-index:2;
  right:0;
- bottom:-1.1rem;
+ bottom:-.9rem;
  font-family:var(--fmin);
- font-size:clamp(2rem,3.8vw,3rem);
+ font-size:clamp(1.8rem,3.2vw,2.6rem);
  color:var(--acc);
  writing-mode:vertical-rl;
  letter-spacing:.1em;
  text-shadow:0 2px 12px rgba(0,0,0,.9);
 }
 .j-card h3{
- margin-top:1.2rem;
- font-size:clamp(.85rem,1.4vw,1.1rem);
- letter-spacing:.28em;
+ margin-top:.7rem;
+ font-size:.84rem;
+ letter-spacing:.26em;
  text-transform:uppercase;
+ white-space:nowrap;
 }
 .j-card h3 em{
  font-style:normal;
  color:var(--acc);
- margin-right:.7em;
+ margin-right:.6em;
 }
 .j-card p{
- margin-top:.4rem;
+ margin-top:.25rem;
  color:var(--mute);
- font-size:clamp(.82rem,1.2vw,.95rem);
- line-height:1.5;
- max-width:32em;
+ font-size:.82rem;
+ line-height:1.4;
+ max-width:min(80vw,368px);
+ word-break:break-word;
 }
 body[data-lang=jp] .j-card p{font-family:var(--fjp)}
 .j-prog{height:2px;background:var(--line);position:relative;margin:0 5vw;overflow:hidden}
 .j-prog i{position:absolute;inset:0;background:var(--acc);transform-origin:left;transform:scaleX(0);transition:transform .1s ease-out}
-.j-count{display:flex;justify-content:space-between;align-items:center;margin:1rem 5vw 0;font-size:.6rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;gap:1rem}
+.j-count{display:flex;justify-content:space-between;align-items:center;margin:.8rem 5vw 0;font-size:.58rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;gap:1rem}
 .j-count .j-idx{color:var(--acc);font-variant-numeric:tabular-nums;white-space:nowrap}
 body.rm .j-stage,html.no-st .j-stage{overflow-x:auto;-webkit-overflow-scrolling:touch}
 html.no-st .j-stage{scroll-snap-type:x proximity}
@@ -589,10 +610,11 @@ html.no-st .j-card{scroll-snap-align:center}
 html.no-st .j-prog i{transform:scaleX(1)}
 body.rm .j-stage::-webkit-scrollbar,html.no-st .j-stage::-webkit-scrollbar{height:4px}
 @media(max-width:640px){
- .j-card{width:min(76vw,340px);padding-top:1.4rem}
- .j-card:nth-child(even){margin-top:.8rem}
- .j-card h3{font-size:.78rem;letter-spacing:.22em;margin-top:.9rem}
- .j-card p{font-size:.8rem}
+ .j-card{padding-top:.8rem}
+ .j-card:nth-child(even){margin-top:0}
+ .j-ph{height:clamp(220px,calc(100svh - 260px),340px);max-width:76vw}
+ .j-card h3{font-size:.76rem;margin-top:.6rem}
+ .j-card p{font-size:.78rem}
 }
 
 /* METHOD */
