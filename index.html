@@ -808,25 +808,38 @@ body[data-theme="light"] #lightbox{background:rgba(244,241,234,.97)}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
 
-/* ================= VIDEO SECTION ================= */
+/* ================= VIDEO SECTION — PREMIUM ================= */
+.vid-sec{position:relative;overflow:hidden}
+.vid-sec::before{
+ content:"";position:absolute;top:0;right:0;
+ width:clamp(200px,40vw,480px);height:clamp(200px,40vw,480px);
+ background:radial-gradient(circle,rgba(200,90,50,.06) 0%,transparent 70%);
+ pointer-events:none;
+}
 .vid-row{
  display:grid;
- grid-template-columns:1fr 1fr;
- gap:clamp(1.6rem,3.5vw,3.2rem);
+ grid-template-columns:1.15fr 1fr;
+ gap:clamp(2rem,4vw,3.8rem);
  align-items:center;
- margin-top:1.4rem;
+ margin-top:1.6rem;
 }
 .vid-card{
  position:relative;
- border:1px solid var(--line2);
  background:var(--cardbg);
  overflow:hidden;
  cursor:pointer;
- transition:border-color .35s,box-shadow .35s;
+ border:1px solid var(--line);
+ transition:border-color .4s,box-shadow .5s;
 }
+.vid-card::before{
+ content:"";position:absolute;top:0;left:0;right:0;height:2px;
+ background:linear-gradient(90deg,transparent,var(--acc),transparent);
+ opacity:0;transition:opacity .4s;z-index:4;
+}
+.vid-card:hover::before{opacity:1}
 .vid-card:hover{
- border-color:var(--acc);
- box-shadow:0 18px 48px rgba(0,0,0,.5),0 0 30px rgba(203,92,51,.1);
+ border-color:rgba(200,90,50,.4);
+ box-shadow:0 20px 56px rgba(0,0,0,.55),0 0 40px rgba(200,90,50,.08);
 }
 .vid-frame{
  position:relative;
@@ -839,63 +852,90 @@ body[data-theme="light"] #lightbox{background:rgba(244,241,234,.97)}
  overflow:hidden;
 }
 .vid-poster{
- position:absolute;
- inset:0;
- width:100%;
- height:100%;
- object-fit:cover;
- object-position:center 25%;
- filter:brightness(.7);
- transition:transform .5s var(--ease),filter .4s;
+ position:absolute;inset:0;width:100%;height:100%;
+ object-fit:cover;object-position:center 25%;
+ filter:brightness(.65) saturate(1.05);
+ transition:transform .7s var(--ease),filter .5s;
 }
-.vid-card:hover .vid-poster{transform:scale(1.04);filter:brightness(.8)}
+.vid-card:hover .vid-poster{transform:scale(1.05);filter:brightness(.78) saturate(1.1)}
 .vid-overlay{
  position:absolute;inset:0;
- background:radial-gradient(circle at center,rgba(0,0,0,.15) 0%,rgba(10,10,11,.75) 90%);
+ background:
+  radial-gradient(ellipse 60% 50% at center,rgba(0,0,0,.05) 0%,rgba(10,10,11,.8) 100%),
+  linear-gradient(to top,rgba(10,10,11,.6) 0%,transparent 40%);
  pointer-events:none;
 }
-.vid-play-wrap{position:relative;z-index:3}
+.vid-play-wrap{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.7rem}
 .vid-play-btn{
- width:clamp(52px,7vw,72px);
- height:clamp(52px,7vw,72px);
+ width:clamp(56px,8vw,76px);
+ height:clamp(56px,8vw,76px);
  border-radius:50%;
- background:rgba(203,92,51,.88);
+ background:rgba(200,90,50,.9);
  color:#fff;
  display:flex;align-items:center;justify-content:center;
- border:2px solid rgba(255,255,255,.7);
- box-shadow:0 0 24px rgba(203,92,51,.5);
- transition:transform .35s var(--ease),background .3s;
+ border:0;
+ box-shadow:0 0 0 3px rgba(255,255,255,.2),0 0 30px rgba(200,90,50,.5),0 10px 28px rgba(0,0,0,.5);
+ transition:transform .4s var(--ease),box-shadow .4s;
+ position:relative;
 }
 .vid-play-btn::before{
- content:"";position:absolute;inset:-10px;border-radius:50%;
- border:1px solid rgba(203,92,51,.4);
- animation:vidPulse 2.4s cubic-bezier(.215,.61,.355,1) infinite;
+ content:"";position:absolute;inset:-11px;border-radius:50%;
+ border:1.5px solid rgba(200,90,50,.35);
+ animation:vidPulse 2.8s cubic-bezier(.215,.61,.355,1) infinite;
 }
-@keyframes vidPulse{0%{transform:scale(.95);opacity:.7}70%{transform:scale(1.3);opacity:0}100%{transform:scale(1.3);opacity:0}}
+.vid-play-btn::after{
+ content:"";position:absolute;inset:-22px;border-radius:50%;
+ border:1px solid rgba(200,90,50,.15);
+ animation:vidPulse 2.8s cubic-bezier(.215,.61,.355,1) .4s infinite;
+}
+@keyframes vidPulse{0%{transform:scale(.92);opacity:.7}70%{transform:scale(1.35);opacity:0}100%{transform:scale(1.35);opacity:0}}
 .vid-play-btn svg{width:clamp(18px,2.5vw,26px);height:auto;margin-left:3px;fill:currentColor}
-.vid-card:hover .vid-play-btn{transform:scale(1.1);background:var(--acc)}
+.vid-card:hover .vid-play-btn{transform:scale(1.12);box-shadow:0 0 0 4px rgba(255,255,255,.3),0 0 45px rgba(200,90,50,.65),0 14px 36px rgba(0,0,0,.6)}
+.vid-play-text{
+ font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;
+ color:rgba(255,255,255,.85);font-weight:700;
+ background:rgba(0,0,0,.55);backdrop-filter:blur(6px);
+ padding:.35em .9em;border:1px solid rgba(255,255,255,.1);
+}
 .vid-badge-bl{
- position:absolute;bottom:.8rem;left:.8rem;z-index:2;
- display:flex;align-items:center;gap:.4rem;
- font-size:.48rem;letter-spacing:.18em;color:#fff;
- background:rgba(0,0,0,.65);backdrop-filter:blur(4px);
- padding:.3em .65em;border-radius:2px;
+ position:absolute;bottom:.9rem;left:.9rem;z-index:2;
+ display:flex;align-items:center;gap:.45rem;
+ font-size:.46rem;letter-spacing:.2em;color:rgba(255,255,255,.9);font-weight:600;
+ background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
+ padding:.35em .75em;border:1px solid rgba(255,255,255,.08);
 }
 .vid-badge-bl i{width:5px;height:5px;border-radius:50%;background:#e04040;animation:blink 1.8s infinite}
+.vid-badge-br{
+ position:absolute;bottom:.9rem;right:.9rem;z-index:2;
+ font-size:.44rem;letter-spacing:.2em;color:var(--acc);font-weight:700;
+ background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
+ padding:.35em .7em;border:1px solid rgba(200,90,50,.2);
+ text-transform:uppercase;
+}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .vid-info{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.vid-info .display{position:relative}
+.vid-sub{
+ font-size:.72rem;letter-spacing:.06em;color:var(--mute);
+ line-height:1.55;margin-top:.6rem;max-width:28em;
+}
 .vid-tags{
- display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem;
+ display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem;
 }
 .vid-tags span{
- font-size:.5rem;letter-spacing:.2em;color:var(--acc);
- border:1px solid var(--line2);padding:.35em .7em;
- text-transform:uppercase;transition:border-color .3s;
+ font-size:.48rem;letter-spacing:.22em;color:var(--acc);font-weight:600;
+ border:1px solid rgba(200,90,50,.25);padding:.4em .8em;
+ text-transform:uppercase;transition:border-color .35s,background .35s;
+ background:rgba(200,90,50,.04);
 }
-.vid-tags span:hover{border-color:var(--acc)}
+.vid-tags span:hover{border-color:var(--acc);background:rgba(200,90,50,.1)}
+.vid-divider{
+ width:28px;height:1px;background:var(--acc);margin-top:1.2rem;margin-bottom:.2rem;
+}
 @media(max-width:860px){
- .vid-row{grid-template-columns:1fr;gap:1.4rem}
- .vid-info{margin-top:.4rem}
+ .vid-row{grid-template-columns:1fr;gap:1.6rem}
+ .vid-info{margin-top:.5rem}
+ .vid-sec::before{display:none}
 }
 
 /* VIDEO MODAL */
@@ -916,125 +956,174 @@ body[data-theme="light"] #lightbox{background:rgba(244,241,234,.97)}
 .vm-placeholder h3{font-family:var(--fd);font-size:1.3rem;letter-spacing:.1em;text-transform:uppercase}
 .vm-placeholder p{font-size:.84rem;color:var(--mute);line-height:1.5}
 
-/* ================= TESTIMONIALS SECTION ================= */
+/* ================= TESTIMONIALS — PREMIUM ================= */
 .reviews-grid{
  display:grid;
  grid-template-columns:repeat(2,1fr);
- gap:1.6rem;
+ gap:1.4rem;
  margin-top:2.4rem;
 }
 .rv-card{
  border:1px solid var(--line);
  background:var(--cardbg);
- padding:1.8rem 1.6rem 1.6rem;
+ padding:0;
  display:flex;
  flex-direction:column;
- justify-content:space-between;
  position:relative;
- transition:border-color .35s,transform .4s var(--ease),background .35s;
+ transition:border-color .4s,transform .45s var(--ease),box-shadow .45s;
+ overflow:hidden;
 }
+.rv-card::before{
+ content:"";position:absolute;top:0;left:0;right:0;height:2px;
+ background:linear-gradient(90deg,var(--acc),transparent);
+ opacity:0;transition:opacity .4s;z-index:2;
+}
+.rv-card:hover::before{opacity:1}
 .rv-card:hover{
- border-color:var(--acc);
- transform:translateY(-4px);
- background:rgba(200,90,50,.04);
+ border-color:rgba(200,90,50,.35);
+ transform:translateY(-3px);
+ box-shadow:0 16px 48px rgba(0,0,0,.25),0 0 24px rgba(200,90,50,.06);
+}
+/* Card body */
+.rv-body{padding:1.6rem 1.5rem 1.4rem;display:flex;flex-direction:column;flex:1}
+/* Big quote mark accent */
+.rv-body::before{
+ content:"\201C";
+ font-family:Georgia,'Times New Roman',serif;
+ font-size:3.6rem;line-height:.8;
+ color:var(--acc);opacity:.18;
+ display:block;margin-bottom:.2rem;
+ pointer-events:none;
 }
 .rv-head{
  display:flex;
  justify-content:space-between;
  align-items:flex-start;
- gap:1rem;
- border-bottom:1px solid var(--line);
- padding-bottom:1rem;
- margin-bottom:1.1rem;
+ gap:.8rem;
+ margin-bottom:1rem;
 }
-.rv-client h3{
- font-family:var(--fd);
- font-weight:850;
- font-size:1.05rem;
- letter-spacing:.08em;
+.rv-client{display:flex;align-items:center;gap:.7rem}
+.rv-client .rv-avatar{
+ width:36px;height:36px;border-radius:50%;
+ background:var(--char);border:1px solid var(--line2);
+ display:flex;align-items:center;justify-content:center;
+ font-family:var(--fd);font-weight:850;font-size:.6rem;
+ color:var(--acc);letter-spacing:.05em;flex:none;
 }
-.rv-client span{
- font-size:.66rem;
- color:var(--mute);
- letter-spacing:.14em;
- display:block;
- margin-top:.2rem;
+.rv-client-info h3{
+ font-family:var(--fd);font-weight:850;
+ font-size:.92rem;letter-spacing:.08em;
+ text-transform:uppercase;
+}
+.rv-client-info span{
+ font-size:.56rem;color:var(--mute);
+ letter-spacing:.16em;display:block;
+ margin-top:.15rem;text-transform:uppercase;
 }
 .rv-tag{
- font-size:.5rem;
- letter-spacing:.22em;
- color:var(--acc);
- text-transform:uppercase;
- border:1px solid var(--line2);
- padding:.35em .7em;
- white-space:nowrap;
+ font-size:.44rem;letter-spacing:.22em;
+ color:var(--acc);text-transform:uppercase;
+ border:1px solid rgba(200,90,50,.25);
+ padding:.35em .65em;white-space:nowrap;
+ background:rgba(200,90,50,.04);
+ align-self:flex-start;
 }
-.rv-rating{color:#f5a623;font-size:.78rem;letter-spacing:.2em;margin-bottom:.8rem}
+.rv-rating{
+ display:flex;align-items:center;gap:.35rem;
+ margin-bottom:.7rem;
+}
+.rv-rating span{
+ color:#d4a017;font-size:.68rem;letter-spacing:.06em;
+}
+.rv-rating small{
+ font-size:.44rem;letter-spacing:.18em;
+ color:var(--dim);text-transform:uppercase;
+ margin-left:.3rem;
+}
 .rv-quote{
- font-size:.88rem;
+ font-size:.82rem;
  color:var(--paper);
- line-height:1.6;
+ line-height:1.65;
  font-style:italic;
  flex:1;
+ opacity:.92;
 }
 body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-height:1.8}
 .rv-metric{
- margin-top:1.4rem;
- padding-top:.9rem;
- border-top:1px dashed var(--line2);
+ margin-top:1.2rem;
+ padding-top:.8rem;
+ border-top:1px solid var(--line);
  display:flex;
  justify-content:space-between;
  align-items:center;
- font-size:.62rem;
+ font-size:.54rem;
  letter-spacing:.2em;
  text-transform:uppercase;
 }
-.rv-metric b{color:var(--acc);font-weight:700}
-.rv-metric span{color:var(--dim)}
+.rv-metric b{color:var(--acc);font-weight:800;font-size:.56rem}
+.rv-metric span{color:var(--dim);font-weight:600}
+/* Trust banner */
 .rv-trust{
- margin-top:2.8rem;
+ margin-top:2.6rem;
  border:1px solid var(--line);
  background:var(--ink);
  display:grid;
  grid-template-columns:repeat(4,1fr);
  text-align:center;
+ position:relative;
+ overflow:hidden;
+}
+.rv-trust::before{
+ content:"";position:absolute;top:0;left:0;right:0;height:1px;
+ background:linear-gradient(90deg,transparent,var(--acc),transparent);
 }
 .rv-trust-cell{
- padding:1.4rem 1rem;
+ padding:1.5rem 1rem;
  border-right:1px solid var(--line);
  display:flex;
  flex-direction:column;
- gap:.3rem;
+ align-items:center;
+ gap:.35rem;
 }
 .rv-trust-cell:last-child{border-right:0}
-.rv-trust-cell b{font-family:var(--fd);font-size:1.6rem;color:var(--acc);font-weight:900}
-.rv-trust-cell span{font-size:.56rem;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
+.rv-trust-cell b{
+ font-family:var(--fd);font-size:1.5rem;
+ color:var(--acc);font-weight:900;
+ font-stretch:115%;font-variation-settings:"wdth" 115;
+}
+.rv-trust-cell span{font-size:.5rem;letter-spacing:.26em;color:var(--mute);text-transform:uppercase}
+.rv-trust-cell::after{
+ content:"";display:block;width:16px;height:1px;
+ background:var(--acc);opacity:.35;margin-top:.15rem;
+}
 @media(max-width:860px){
- .reviews-grid{grid-template-columns:1fr;gap:1.2rem}
+ .reviews-grid{grid-template-columns:1fr;gap:1.1rem}
  .rv-trust{grid-template-columns:1fr 1fr}
  .rv-trust-cell:nth-child(2n){border-right:0}
  .rv-trust-cell:nth-child(-n+2){border-bottom:1px solid var(--line)}
 }
 
-
 /* Testimonial Video Slots */
-.rv-vid-slot{margin-bottom:.9rem}
+.rv-vid-slot{position:relative;overflow:hidden}
 .rv-vid-ph{
- aspect-ratio:16/9;
- width:100%;
- background:var(--ink);
- border:1px dashed var(--line2);
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
- gap:.5rem;
+ aspect-ratio:16/9;width:100%;
+ background:linear-gradient(135deg,var(--ink) 0%,var(--char) 100%);
+ border-bottom:1px solid var(--line);
+ display:flex;flex-direction:column;
+ align-items:center;justify-content:center;gap:.55rem;
  color:var(--dim);
- transition:border-color .3s,background .3s;
+ transition:background .4s;
+ position:relative;
 }
-.rv-vid-ph:hover{border-color:var(--acc);background:rgba(203,92,51,.04)}
-.rv-vid-ph svg{width:28px;height:28px;opacity:.4}
-.rv-vid-ph span{font-size:.48rem;letter-spacing:.24em;text-transform:uppercase}
+.rv-vid-ph::before{
+ content:"";position:absolute;inset:0;
+ background:radial-gradient(circle at center,rgba(200,90,50,.04) 0%,transparent 70%);
+ pointer-events:none;
+}
+.rv-vid-ph:hover{background:linear-gradient(135deg,var(--char) 0%,var(--ink) 100%)}
+.rv-vid-ph svg{width:32px;height:32px;opacity:.25;transition:opacity .3s}
+.rv-vid-ph:hover svg{opacity:.45}
+.rv-vid-ph span{font-size:.44rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600}
 
 /* ==================== MOBILE POLISH ==================== */
 @media(max-width:820px){
@@ -1178,7 +1267,7 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
 
 <!-- ================= 02 — TRAINING ================= -->
 
-<!-- ================= INTRODUCTION VIDEO ================= -->
+<!-- ================= INTRODUCTION VIDEO — PREMIUM ================= -->
 <section class="sec vid-sec" id="intro-video" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <p class="kicker" data-reveal><span data-i18n="vid.k">MEET THE COACH · 自己紹介</span></p>
@@ -1191,17 +1280,20 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
             <button class="vid-play-btn" type="button" aria-label="Play Introduction Video">
               <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
             </button>
+            <span class="vid-play-text">▶ WATCH INTRODUCTION</span>
           </div>
-          <div class="vid-badge-bl"><i></i><span>02:45</span></div>
+          <div class="vid-badge-bl"><i></i><span>SELF INTRODUCTION · 02:45</span></div>
+          <div class="vid-badge-br">EN · 日本語</div>
         </div>
       </div>
       <div class="vid-info">
         <h2 class="display" style="font-size:clamp(1.4rem,3.2vw,2.4rem);line-height:1.08;margin:0" data-i18n="vid.t">TRAIN WITH SOMEONE<br>WHO LIVES THE WORK.</h2>
-        <p class="mute" data-i18n="vid.s" style="margin-top:.7rem;max-width:30em;font-size:.86rem;line-height:1.55">Watch my self-introduction — my journey, coaching philosophy, and what working with me online looks like.</p>
+        <p class="vid-sub" data-i18n="vid.s">Watch my self-introduction — my 5-year journey, coaching philosophy, and what working with me 100% online looks like.</p>
+        <div class="vid-divider"></div>
         <div class="vid-tags">
-          <span>5+ YEARS</span><span>100% ONLINE</span><span>EN · 日本語</span>
+          <span>5+ YEARS</span><span>100% ONLINE</span><span>WORLDWIDE</span>
         </div>
-        <a class="btn btn-solid" href="#contact" data-scroll style="margin-top:1rem"><span data-i18n="cta.start">START ONLINE COACHING</span><svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h22M18 1l4 4-4 4"/></svg></a>
+        <a class="btn btn-solid" href="#contact" data-scroll style="margin-top:1.3rem"><span data-i18n="cta.start">START ONLINE COACHING</span><svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h22M18 1l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -1341,54 +1433,62 @@ body[data-lang=jp] .rv-quote{font-style:normal;font-family:var(--fjp);line-heigh
     <div class="reviews-grid" data-reveal>
       <div class="rv-card">
         <div class="rv-vid-slot">
-          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO COMING SOON</span></div>
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
         </div>
-        <div class="rv-head">
-          <div class="rv-client"><h3>Kenji S.</h3><span>Tokyo, Japan · 東京</span></div>
-          <span class="rv-tag">1-ON-1 COACHING</span>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">KS</div><div class="rv-client-info"><h3>Kenji S.</h3><span>Tokyo, Japan · 東京</span></div></div>
+            <span class="rv-tag">1-ON-1 COACHING</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q1">"Abhishek designed my plan around my busy Tokyo work schedule and a basic local gym. He reviews my lifting form videos every week and gives precise feedback. In 6 months I built more muscle than in 3 years training on my own."</p>
+          <div class="rv-metric"><b>+40kg SQUAT / 10% FAT LOSS</b><span>6 MONTHS</span></div>
         </div>
-        <div class="rv-rating">★★★★★</div>
-        <p class="rv-quote" data-i18n="ts.q1">"Abhishek designed my plan around my busy Tokyo work schedule and a basic local gym. He reviews my lifting form videos every week and gives precise feedback. In 6 months I built more muscle than in 3 years training on my own."</p>
-        <div class="rv-metric"><b>+40kg SQUAT / 10% FAT LOSS</b><span>6 MONTHS</span></div>
       </div>
 
       <div class="rv-card">
         <div class="rv-vid-slot">
-          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO COMING SOON</span></div>
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
         </div>
-        <div class="rv-head">
-          <div class="rv-client"><h3>David M.</h3><span>California, USA</span></div>
-          <span class="rv-tag">STRENGTH &amp; RECOMP</span>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">DM</div><div class="rv-client-info"><h3>David M.</h3><span>California, USA</span></div></div>
+            <span class="rv-tag">STRENGTH &amp; RECOMP</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q2">"No generic templates. Abhishek listened to my past shoulder issues and built a custom pressing routine that let me bench pain-free while packing on serious size. The weekly check-ins kept me 100% accountable."</p>
+          <div class="rv-metric"><b>+35kg DEADLIFT / PAIN-FREE</b><span>16 WEEKS</span></div>
         </div>
-        <div class="rv-rating">★★★★★</div>
-        <p class="rv-quote" data-i18n="ts.q2">"No generic templates. Abhishek listened to my past shoulder issues and built a custom pressing routine that let me bench pain-free while packing on serious size. The weekly check-ins kept me 100% accountable."</p>
-        <div class="rv-metric"><b>+35kg DEADLIFT / PAIN-FREE</b><span>16 WEEKS</span></div>
       </div>
 
       <div class="rv-card">
         <div class="rv-vid-slot">
-          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO COMING SOON</span></div>
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
         </div>
-        <div class="rv-head">
-          <div class="rv-client"><h3>Elena R.</h3><span>London, UK</span></div>
-          <span class="rv-tag">BEGINNER TO LIFTER</span>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">ER</div><div class="rv-client-info"><h3>Elena R.</h3><span>London, UK</span></div></div>
+            <span class="rv-tag">BEGINNER TO LIFTER</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q3">"As a complete beginner who was nervous about gym training, Abhishek made everything approachable. He taught me compound lifts step by step and helped me fix my nutrition without extreme dieting."</p>
+          <div class="rv-metric"><b>FIRST STRICT PULL-UP / -14kg</b><span>8 MONTHS</span></div>
         </div>
-        <div class="rv-rating">★★★★★</div>
-        <p class="rv-quote" data-i18n="ts.q3">"As a complete beginner who was nervous about gym training, Abhishek made everything approachable. He taught me compound lifts step by step and helped me fix my nutrition without extreme dieting."</p>
-        <div class="rv-metric"><b>FIRST STRICT PULL-UP / -14kg</b><span>8 MONTHS</span></div>
       </div>
 
       <div class="rv-card">
         <div class="rv-vid-slot">
-          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO COMING SOON</span></div>
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
         </div>
-        <div class="rv-head">
-          <div class="rv-client"><h3>Tatsuya Y.</h3><span>Osaka, Japan · 大阪</span></div>
-          <span class="rv-tag">POWERLIFTING &amp; ATHLETE</span>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">TY</div><div class="rv-client-info"><h3>Tatsuya Y.</h3><span>Osaka, Japan · 大阪</span></div></div>
+            <span class="rv-tag">POWERLIFTING &amp; ATHLETE</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q4">"Abhishek's understanding of periodization and fatigue management is top-tier. His Japanese communication is very clear and supportive. Best investment I've made in my athletic journey."</p>
+          <div class="rv-metric"><b>+75kg TOTAL SBD / COMPETITION</b><span>1 YEAR</span></div>
         </div>
-        <div class="rv-rating">★★★★★</div>
-        <p class="rv-quote" data-i18n="ts.q4">"Abhishek's understanding of periodization and fatigue management is top-tier. His Japanese communication is very clear and supportive. Best investment I've made in my athletic journey."</p>
-        <div class="rv-metric"><b>+75kg TOTAL SBD / COMPETITION</b><span>1 YEAR</span></div>
       </div>
     </div>
 
