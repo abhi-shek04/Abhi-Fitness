@@ -600,6 +600,17 @@ html.has-st .j-stage{
  word-break:break-word;
 }
 body[data-lang=jp] .j-card p{font-family:var(--fjp)}
+
+.j-foot-wrap{
+ position:absolute;
+ bottom:14px;
+ left:0;
+ right:0;
+ z-index:5;
+ pointer-events:none;
+}
+.j-foot-wrap > *{pointer-events:auto}
+
 .j-prog{height:2px;background:var(--line);position:relative;margin:0 5vw;overflow:hidden}
 .j-prog i{position:absolute;inset:0;background:var(--acc);transform-origin:left;transform:scaleX(0);transition:transform .1s ease-out}
 .j-count{display:flex;justify-content:space-between;align-items:center;margin:.8rem 5vw 0;font-size:.58rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;gap:1rem}
@@ -1595,9 +1606,11 @@ body[data-theme="light"] .ho-kanji-bg{color:rgba(23,22,26,.05)}
   </div>
   <div class="j-stage">
     <div class="j-track"></div>
+    <div class="j-foot-wrap">
+      <div class="j-prog"><i></i></div>
+      <div class="j-count"><span data-i18n="jr.hint">SCROLL TO TRAVEL — スクロールで進む</span><span class="j-idx">01 / 06</span></div>
+    </div>
   </div>
-  <div class="j-prog"><i></i></div>
-  <div class="j-count"><span data-i18n="jr.hint">SCROLL TO TRAVEL — スクロールで進む</span><span class="j-idx">01 / 06</span></div>
 </section>
 
 <!-- ================= 04 — METHOD ================= -->
@@ -2116,41 +2129,12 @@ function scrollToSel(sel){const el=typeof sel==='string'?$(sel):sel;if(!el)retur
 function setJIdx(k){const el=$('.j-idx');if(!el)return;const n=JOURNEY.length;el.textContent=pad(clamp(k,1,n))+' / '+pad(n)}
 
 /* ================= SMOOTH SCROLL ================= */
-const Smooth={on:false,target:0,cur:0,lastSet:-1,watch:0,
- init(){
-  this.on=FINE&&!RM;
-  if(!this.on)return;
-  addEventListener('wheel',e=>{
-    if(!this.on||document.body.classList.contains('lock'))return;
-    const t=e.target instanceof Element?e.target:null;
-    if(t&&t.closest('[data-hscroll], .g-viewport'))return;
-    let d=e.deltaY;
-    if(e.deltaMode===1)d*=16;else if(e.deltaMode===2)d*=Math.max(250,innerHeight*.9);
-    const max=document.documentElement.scrollHeight-innerHeight;
-    if(max<=1)return;
-    e.preventDefault();
-    this.target=clamp(this.target+d,0,max);
-  },{passive:false});
-  addEventListener('scroll',()=>{if(Math.abs(scrollY-this.lastSet)>2){this.cur=this.target=scrollY}},{passive:true});
- },
- tick(){
-  if(!this.on||document.body.classList.contains('lock'))return;
-  if(this.cur===this.target)return;
-  this.cur=lerp(this.cur,this.target,.095);
-  if(Math.abs(this.cur-this.target)<.4)this.cur=this.target;
-  const set=Math.round(this.cur);
-  this.lastSet=set;
-  scrollTo(0,set);
-  if(Math.abs(scrollY-set)>2){this.watch++;if(this.watch>90){this.on=false}}
-  else this.watch=0;
- },
+const Smooth={
  to(y){
   const max=document.documentElement.scrollHeight-innerHeight;
   y=clamp(y,0,Math.max(0,max));
-  if(this.on){this.target=y}
-  else{try{window.scrollTo({top:y,behavior:RM?'auto':'smooth'})}catch(e){window.scrollTo(0,y)};this.cur=this.target=y;this.lastSet=y}
+  try{window.scrollTo({top:y,behavior:RM?'auto':'smooth'})}catch(e){window.scrollTo(0,y)}
  }};
-Smooth.init();
 
 document.addEventListener('click',e=>{
  const a=e.target instanceof Element?e.target.closest('a[data-scroll]'):null;
@@ -2253,7 +2237,12 @@ const Gal={x:0,vx:0,speed:.6,paused:false,drag:false,lastX:0,moved:0,inView:true
    this.x+=d;this.vx=d;});
   addEventListener('pointerup',()=>{this.drag=false});
   addEventListener('pointercancel',()=>{this.drag=false});
-  vp.addEventListener('wheel',e=>{e.preventDefault();this.x-=(e.deltaY+e.deltaX);},{passive:false});
+  vp.addEventListener('wheel',e=>{
+   if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){
+    e.preventDefault();
+    this.x-=e.deltaX;
+   }
+  },{passive:false});
   vp.addEventListener('keydown',e=>{
    if(e.key==='ArrowRight'){e.preventDefault();this.x-=360}
    else if(e.key==='ArrowLeft'){e.preventDefault();this.x+=360}});
@@ -2612,8 +2601,7 @@ function runLoader(){
 const _dead={};
 function safe(name,fn){try{fn()}catch(e){if(!_dead[name]){_dead[name]=1;if(window.console)console.warn('[AF]',name,'disabled:',e)}}}
 function loop(t){
- safe('scroll',()=>Smooth.tick());
- safe('parallax',()=>PLY.tick());
+  safe('parallax',()=>PLY.tick());
  safe('gallery',()=>Gal.tick(t));
  safe('webgl',()=>GL.tick(t));
  requestAnimationFrame(loop)}
