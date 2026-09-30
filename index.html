@@ -1425,146 +1425,6 @@ body[data-theme="light"] .ho-kanji-bg{color:rgba(23,22,26,.05)}
  .co-note{font-size:.62rem;margin-top:.9rem}
  #toast{font-size:.56rem;letter-spacing:.12em;padding:.65em 1.1em}
 }
-
-/* ================= 5-STEP PROCESS ROADMAP LUXURY UI/UX ================= */
-.steps {
-  display: grid !important;
-  grid-template-columns: repeat(5, 1fr) !important;
-  gap: 1.1rem !important;
-  margin-top: 1.6rem !important;
-  position: relative !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.step-card {
-  border: 1px solid var(--line);
-  background: var(--cardbg);
-  padding: 1.5rem 1.2rem;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 180px;
-  box-sizing: border-box;
-  transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
-}
-
-.step-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--acc), transparent);
-  opacity: 0;
-  transition: opacity .35s;
-  z-index: 2;
-}
-
-.step-card:hover::before {
-  opacity: 1;
-}
-
-.step-card:hover {
-  border-color: rgba(200, 90, 50, .38);
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, .28), 0 0 24px rgba(200, 90, 50, .08);
-}
-
-.step-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 0.9rem;
-}
-
-.step-badge {
-  font-family: var(--fd);
-  font-size: 1.5rem;
-  font-weight: 900;
-  font-stretch: 115%;
-  font-variation-settings: "wdth" 115;
-  color: var(--acc);
-  line-height: 1;
-  letter-spacing: .02em;
-}
-
-.step-tag {
-  font-size: 0.44rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dim);
-  border: 1px solid var(--line2);
-  padding: 0.3em 0.6em;
-  border-radius: 2px;
-}
-
-.step-title {
-  font-family: var(--fd);
-  font-size: clamp(0.92rem, 1.2vw, 1.08rem);
-  font-weight: 850;
-  font-stretch: 112%;
-  font-variation-settings: "wdth" 112;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--paper);
-  margin-bottom: 0.5rem;
-  line-height: 1.25;
-}
-
-body[data-lang=jp] .step-title {
-  font-family: var(--fjp);
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0.04em;
-}
-
-.step-desc {
-  font-size: 0.8rem;
-  color: var(--mute);
-  line-height: 1.55;
-  opacity: 0.92;
-  margin: 0;
-}
-
-body[data-lang=jp] .step-desc {
-  font-family: var(--fjp);
-  line-height: 1.7;
-}
-
-@media (max-width: 1120px) {
-  .steps {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.1rem !important;
-  }
-}
-
-@media (max-width: 720px) {
-  .steps {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.9rem !important;
-  }
-  .step-card {
-    padding: 1.25rem 1rem;
-    min-height: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .steps {
-    grid-template-columns: 1fr !important;
-    gap: 0.85rem !important;
-  }
-  .step-card {
-    min-height: 0;
-  }
-}
-
 </style>
 </head>
 <body data-lang="en" data-theme="dark">
@@ -1597,7 +1457,7 @@ body[data-lang=jp] .step-desc {
     <a href="#journey" data-scroll><span data-i18n="nav.journey">JOURNEY</span></a>
     <a href="#method" data-scroll><span data-i18n="nav.method">METHOD</span></a>
     <a href="#focus" data-scroll><span data-i18n="nav.focus">FOCUS</span></a>
-    
+    <a href="#reviews" data-scroll><span data-i18n="nav.reviews">RESULTS</span></a>
     <a href="#pricing" data-scroll><span data-i18n="nav.pricing">PRICING</span></a>
     <a href="#contact" data-scroll class="nv-nav-cta"><span data-i18n="nav.start">START →</span></a>
   </nav>
@@ -1646,11 +1506,11 @@ body[data-lang=jp] .step-desc {
 </section>
 
 <div class="marq" aria-hidden="true">
-      <div class="marq-t">
-      <span data-i18n="marq.text">ONLINE COACHING <b>·</b> STRENGTH <b>·</b> DISCIPLINE <b>·</b> NUTRITION <b>·</b> PERSONALIZED <b>·</b> WORLDWIDE</span>
-      <span data-i18n="marq.text">ONLINE COACHING <b>·</b> STRENGTH <b>·</b> DISCIPLINE <b>·</b> NUTRITION <b>·</b> PERSONALIZED <b>·</b> WORLDWIDE</span>
-    </div>
+  <div class="marq-t">
+    <span>ONLINE COACHING <b>オンライン指導</b> STRENGTH <b>筋力</b> DISCIPLINE <b>規律</b> NUTRITION <b>栄養</b> WORLDWIDE <b>世界対応</b></span>
+    <span>ONLINE COACHING <b>オンライン指導</b> STRENGTH <b>筋力</b> DISCIPLINE <b>規律</b> NUTRITION <b>栄養</b> WORLDWIDE <b>世界対応</b></span>
   </div>
+</div>
 
 <!-- ================= 01 — WHO ================= -->
 <section class="sec" id="about">
@@ -1840,11 +1700,99 @@ body[data-lang=jp] .step-desc {
 
 <!-- ================= 07 — FAQ ================= -->
 
+<!-- ================= 07 — CLIENT RESULTS & REVIEWS ================= -->
+<section class="sec" id="reviews" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="kicker" data-reveal><span data-i18n="ts.k">07 — CLIENT RESULTS</span></p>
+    <h2 class="display h2" data-i18n="ts.t" data-reveal>REAL PEOPLE.<br>REAL STRENGTH.</h2>
+    <p class="mute" data-reveal data-i18n="ts.s" style="max-width:38em">Real transformations and feedback from clients who built strength, lost body fat, and developed habits that endure for life.</p>
+    
+    <div class="reviews-grid" data-reveal>
+      <div class="rv-card">
+        <div class="rv-vid-slot">
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
+        </div>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">KS</div><div class="rv-client-info"><h3>Kenji S.</h3><span>Tokyo, Japan · 東京</span></div></div>
+            <span class="rv-tag">1-ON-1 COACHING</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q1">"Abhishek designed my plan around my busy Tokyo work schedule and a basic local gym. He reviews my lifting form videos every week and gives precise feedback. In 6 months I built more muscle than in 3 years training on my own."</p>
+          <div class="rv-metric"><b>+40kg SQUAT / 10% FAT LOSS</b><span>6 MONTHS</span></div>
+        </div>
+      </div>
 
+      <div class="rv-card">
+        <div class="rv-vid-slot">
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
+        </div>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">DM</div><div class="rv-client-info"><h3>David M.</h3><span>California, USA</span></div></div>
+            <span class="rv-tag">STRENGTH &amp; RECOMP</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q2">"No generic templates. Abhishek listened to my past shoulder issues and built a custom pressing routine that let me bench pain-free while packing on serious size. The weekly check-ins kept me 100% accountable."</p>
+          <div class="rv-metric"><b>+35kg DEADLIFT / PAIN-FREE</b><span>16 WEEKS</span></div>
+        </div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-vid-slot">
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
+        </div>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">ER</div><div class="rv-client-info"><h3>Elena R.</h3><span>London, UK</span></div></div>
+            <span class="rv-tag">BEGINNER TO LIFTER</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q3">"As a complete beginner who was nervous about gym training, Abhishek made everything approachable. He taught me compound lifts step by step and helped me fix my nutrition without extreme dieting."</p>
+          <div class="rv-metric"><b>FIRST STRICT PULL-UP / -14kg</b><span>8 MONTHS</span></div>
+        </div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-vid-slot">
+          <div class="rv-vid-ph"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg><span>VIDEO TESTIMONIAL · COMING SOON</span></div>
+        </div>
+        <div class="rv-body">
+          <div class="rv-head">
+            <div class="rv-client"><div class="rv-avatar">TY</div><div class="rv-client-info"><h3>Tatsuya Y.</h3><span>Osaka, Japan · 大阪</span></div></div>
+            <span class="rv-tag">POWERLIFTING &amp; ATHLETE</span>
+          </div>
+          <div class="rv-rating"><span>★★★★★</span><small>VERIFIED CLIENT</small></div>
+          <p class="rv-quote" data-i18n="ts.q4">"Abhishek's understanding of periodization and fatigue management is top-tier. His Japanese communication is very clear and supportive. Best investment I've made in my athletic journey."</p>
+          <div class="rv-metric"><b>+75kg TOTAL SBD / COMPETITION</b><span>1 YEAR</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv-trust" data-reveal>
+      <div class="rv-trust-cell">
+        <b>100%</b>
+        <span data-i18n="ts.t1">CUSTOM DESIGNED</span>
+      </div>
+      <div class="rv-trust-cell">
+        <b>5.0 ★</b>
+        <span data-i18n="ts.t2">CLIENT SATISFACTION</span>
+      </div>
+      <div class="rv-trust-cell">
+        <b>48h</b>
+        <span data-i18n="ts.t3">FEEDBACK RESPONSE</span>
+      </div>
+      <div class="rv-trust-cell">
+        <b>GLOBAL</b>
+        <span data-i18n="ts.t4">WORLDWIDE SUPPORT</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="sec" id="faq" style="border-top:1px solid var(--line)">
   <div class="wrap">
-    <p class="kicker" data-reveal><span data-i18n="fq.k">07 — QUESTIONS</span></p>
+    <p class="kicker" data-reveal><span data-i18n="fq.k">08 — QUESTIONS</span></p>
     <h2 class="display h2" data-i18n="fq.t" data-reveal>ASKED &<br>ANSWERED.</h2>
     <div class="faq-list" data-reveal></div>
   </div>
@@ -1853,7 +1801,7 @@ body[data-lang=jp] .step-desc {
 <!-- ================= 08 — PRICING ================= -->
 <section class="sec" id="pricing" style="border-top:1px solid var(--line);background:var(--char)">
   <div class="wrap">
-    <p class="kicker" data-reveal><span data-i18n="pr.k">08 — PRICING</span></p>
+    <p class="kicker" data-reveal><span data-i18n="pr.k">09 — PRICING</span></p>
     <h2 class="display h2" data-i18n="pr.t" data-reveal>BASED ON YOUR<br>REQUIREMENTS.</h2>
     <p class="mute" data-reveal data-i18n="pr.s" style="max-width:36em">Price is based on your requirements and goals — every plan is personal, and so is the price.</p>
     <div class="pr-list" data-reveal></div>
@@ -1867,7 +1815,7 @@ body[data-lang=jp] .step-desc {
 <!-- ================= 09 — START ================= -->
 <section class="sec" id="contact" style="border-top:1px solid var(--line)">
   <div class="wrap">
-    <p class="kicker" data-reveal><span data-i18n="co.k">09 — START</span></p>
+    <p class="kicker" data-reveal><span data-i18n="co.k">10 — START</span></p>
     <h2 class="display h2" data-i18n="co.t" data-reveal>READY TO GET<br>STRONGER?</h2>
     <p class="cta-jp jpd" data-reveal style="margin:.5rem 0 0">次の一歩を、ここから。</p>
     <div class="co-grid">
@@ -2122,10 +2070,10 @@ en:{'nav.quote':'DISCIPLINE OVER MOTIVATION',
 'pc.k':'HOW ONLINE COACHING WORKS','pc.t':'FIVE STEPS.<br>ZERO GUESSWORK.',
 'bm.k':'05 — FOCUS','bm.t':'EVERY REP<br>HAS A REASON.','bm.s':'Tap any muscle group you want to view — front or back — and see how I train it and what it moves.','bm.hint':'TAP ANY MUSCLE GROUP','bm.moves':'MOVES','bm.front':'FRONT','bm.back':'BACK','bm.note':'Educational overview only — your plan is always designed personally. 医療アドバイスではありません。',
 'ga.k':'06 — THE WORK','ga.t':'SEEN,<br>NOT SAID.','ga.s':'It moves on its own — hover to pause, drag to steer, click any photo to open.',
-'ts.k':'07 — CLIENT RESULTS · 受講生の声と実績','ts.t':'REAL PEOPLE.<br>REAL STRENGTH.','ts.s':'Real transformations and feedback from clients who built strength, lost body fat, and developed habits that endure for life.','ts.q1':'“Abhishek designed my plan around my busy Tokyo work schedule and a basic local gym. He reviews my lifting form videos every week and gives precise feedback. In 6 months I built more muscle than in 3 years training on my own.”','ts.q2':'“No generic templates. Abhishek listened to my past shoulder issues and built a custom pressing routine that let me bench pain-free while packing on serious size. The weekly check-ins kept me 100% accountable.”','ts.q3':'“As a complete beginner who was nervous about gym training, Abhishek made everything approachable. He taught me compound lifts step by step and helped me fix my nutrition without extreme dieting.”','ts.q4':'“Abhishek’s understanding of periodization and fatigue management is top-tier. His Japanese communication is very clear and supportive. Best investment I’ve made in my athletic journey.”','ts.t1':'CUSTOM DESIGNED','ts.t2':'CLIENT SATISFACTION','ts.t3':'FEEDBACK RESPONSE','ts.t4':'WORLDWIDE SUPPORT',
-'fq.k':'07 — QUESTIONS','fq.t':'ASKED &amp;<br>ANSWERED.',
-'pr.k':'08 — PRICING','pr.t':'BASED ON YOUR<br>REQUIREMENTS.','pr.s':'Price is based on your requirements and goals — every plan is personal, and so is the price.','pr.onreq':'ON REQUEST','pr.note':'Tell me your goal and I’ll reply with the exact price for your plan — no packages pushed, no hidden fees.',
-'co.k':'09 — START','co.t':'READY TO GET<br>STRONGER?','co.ch':'REACH ME DIRECTLY.','co.fh':'OR WRITE BELOW.','co.n':'One tap opens a direct chat — I reply within 48 hours, usually much sooner.',
+'ts.k':'07 — CLIENT RESULTS','ts.t':'REAL PEOPLE.<br>REAL STRENGTH.','ts.s':'Real transformations and feedback from clients who built strength, lost body fat, and developed habits that endure for life.','ts.q1':'“Abhishek designed my plan around my busy Tokyo work schedule and a basic local gym. He reviews my lifting form videos every week and gives precise feedback. In 6 months I built more muscle than in 3 years training on my own.”','ts.q2':'“No generic templates. Abhishek listened to my past shoulder issues and built a custom pressing routine that let me bench pain-free while packing on serious size. The weekly check-ins kept me 100% accountable.”','ts.q3':'“As a complete beginner who was nervous about gym training, Abhishek made everything approachable. He taught me compound lifts step by step and helped me fix my nutrition without extreme dieting.”','ts.q4':'“Abhishek’s understanding of periodization and fatigue management is top-tier. His Japanese communication is very clear and supportive. Best investment I’ve made in my athletic journey.”','ts.t1':'CUSTOM DESIGNED','ts.t2':'CLIENT SATISFACTION','ts.t3':'FEEDBACK RESPONSE','ts.t4':'WORLDWIDE SUPPORT',
+'fq.k':'08 — QUESTIONS','fq.t':'ASKED &amp;<br>ANSWERED.',
+'pr.k':'09 — PRICING','pr.t':'BASED ON YOUR<br>REQUIREMENTS.','pr.s':'Price is based on your requirements and goals — every plan is personal, and so is the price.','pr.onreq':'ON REQUEST','pr.note':'Tell me your goal and I’ll reply with the exact price for your plan — no packages pushed, no hidden fees.',
+'co.k':'10 — START','co.t':'READY TO GET<br>STRONGER?','co.ch':'REACH ME DIRECTLY.','co.fh':'OR WRITE BELOW.','co.n':'One tap opens a direct chat — I reply within 48 hours, usually much sooner.',
 'fo.name':'NAME','fo.namep':'Your name','fo.age':'AGE','fo.mail':'EMAIL','fo.goal':'YOUR GOAL','fo.g0':'SELECT YOUR GOAL','fo.g1':'BUILD MUSCLE &amp; STRENGTH','fo.g2':'FAT LOSS / BODY COMPOSITION — 減量・ボディメイク','fo.g3':'BEGINNER — START RIGHT — 初心者','fo.g4':'ATHLETE / POWERLIFTER — アスリート・パワーリフター','fo.g5':'NUTRITION &amp; LIFESTYLE','fo.g6':'OTHER','fo.msg':'MESSAGE — OPTIONAL','fo.msgp':'Your goal, your experience, where you train — a few lines help me prepare.','fo.send':'SEND MESSAGE','fo.ename':'Please tell me your name.','fo.eage':'Please enter a valid age.','fo.email':'Please enter a valid email address.','fo.okt':'MESSAGE RECEIVED.',
 'ft.top':'BACK TO TOP','ft.line':'BUILD YOUR STRONGER SELF.'},
 jp:{'nav.quote':'モチベーションより、規律。',
@@ -2134,7 +2082,7 @@ jp:{'nav.quote':'モチベーションより、規律。',
 'hero.kicker':'ABHISHEK — オンラインパーソナルトレーナー＆コーチ','hero.l1':'より強い','hero.l2':'自分を、','hero.l3':'つくる。','hero.l4':'','hero.sub':'オンライン指導 · 筋力強化 · コンディショニング · 栄養 · ライフスタイル','hero.badge':'完全個別指導 · あなたの目標から逆算して設計','hero.scroll':'スクロール','hero.coords':'オンライン指導 · 世界中対応 · 実践歴5年以上',
 'about.k':'01 — ABOUT ME','who.st':'5年間、トレーニング・食事・睡眠・マインドセットをひとつの統合システムとして実践してきました。現在はそれを完全オンラインで指導しています。すべてのプログラムは、あなたの要望・器具環境・目標に合わせて個別に設計します。テンプレートや近道ではなく、あなたに本当に効果のあるものだけをお届けします。','who.m1':'トレーナー','who.m2':'指導領域','who.m2v':'オンライン指導 · 筋力強化 · トータルシステム','who.m4':'実践・指導歴','who.m4v':'5年以上',
 'fk.r1':'実績・経験','fk.v1':'トレーニング・ボディビル・指導歴 5年以上','fk.r6':'指導形式','fk.v6':'100%オンライン — 世界中のクライアントに対応','fk.r2':'指導分野','fk.v2':'筋力強化 · コンディショニング · アスリート/パワーリフター · 初心者','fk.r7':'指導方針','fk.v7':'一人ひとりの目標・ライフスタイルに合わせた完全オーダーメイド設計','fk.r4':'対応言語','fk.v4':'ENGLISH &amp; JAPANESE',
-'vid.k':'01 — コーチ紹介','vid.t':'本気で体現する、<br>指導者とともに。','vid.s':'5年間の道のり、指導理念、そして100%オンラインでどのようにサポートするかを動画でご紹介します。','vm.t':'自己紹介動画（準備中）','vm.s':'動画プレイヤーの準備が完了しています。動画リンクまたはファイルをご提供いただき次第、こちらで高画質再生されます。',
+'vid.k':'コーチ紹介','vid.t':'本気で体現する、<br>指導者とともに。','vid.s':'5年間の道のり、指導理念、そして100%オンラインでどのようにサポートするかを動画でご紹介します。','vm.t':'自己紹介動画（準備中）','vm.s':'動画プレイヤーの準備が完了しています。動画リンクまたはファイルをご提供いただき次第、こちらで高画質再生されます。',
 'tr.k':'02 — 指導内容','tr.t':'あなたの目標に、<br>合わせて設計。','tr.s':'3つの専門分野をオンラインで指導します。あなたの目標・設備・スケジュールに合わせて個別にプランを構築します。各項目をタップして詳細をご覧ください。',
 'ho.k':'残りの23時間','ho.t':'ジムでの1時間。<br>日常の23時間。',
 'jr.k':'03 — 道のり','jr.title':'体は生まれつきではなく、<br>つくるもの。','jr.s':'5年間の軌跡を6つの場面で。スクロールしてご覧ください。','jr.hint':'スクロールで進む',
@@ -2142,10 +2090,10 @@ jp:{'nav.quote':'モチベーションより、規律。',
 'pc.k':'オンライン指導の流れ','pc.t':'5つのステップ。<br>迷わず進める。',
 'bm.k':'05 — 鍛える部位','bm.t':'全ての種目に、<br>明確な理由がある。','bm.s':'気になる部位（前面・背面）をタップすると、指導方針と担当する動作が表示されます。','bm.hint':'部位をタップ','bm.moves':'主な種目','bm.front':'前面','bm.back':'背面','bm.note':'※参考用の解説です。実際のプランは個々の目標・身体に合わせて設計します。医療行為ではありません。',
 'ga.k':'06 — 記録','ga.t':'言葉以上に、<br>結果で語る。','ga.s':'自動でスクロールします。マウスホバーで一時停止、ドラッグで操作、写真をタップで拡大。',
-'ts.k':'07 — 受講生の実績と声 · CLIENT RESULTS','ts.t':'確かな変化と、<br>受講生の実績。','ts.s':'筋力向上、体脂肪減少、一生続く習慣を手に入れた受講生の方々のリアルな声と変化です。','ts.q1':'「仕事が忙しくても続けられるメニューを組んでくれました。毎週のフォーム確認と食事のアドバイスが的確で、6ヶ月で過去最高の身体になりました。」','ts.q2':'「テンプレートではなく、過去の肩の違和感に配慮した専用メニューを作成してくれました。毎週の進捗管理のおかげで、怪我なく自己記録を更新できました。」','ts.q3':'「完全な筋トレ初心者でしたが、丁寧な指導で不安なく始められました。無理な食事制限もなく、健康的な習慣が自然と身につきました。」','ts.q4':'「ピリオダイゼーションと疲労管理の理論が素晴らしいです。日本語でもわかりやすくサポートしてくれます。本格的に強くなりたい人に全力でおすすめします。」','ts.t1':'完全オーダーメイド','ts.t2':'受講生満足度','ts.t3':'48時間以内返答','ts.t4':'世界中どこでも対応',
-'fq.k':'07 — よくある質問','fq.t':'よくあるご質問と回答。',
-'pr.k':'08 — 料金プラン','pr.t':'あなたの要望に、<br>合わせた料金体系。','pr.s':'料金はあなたの目標と必要なサポート内容に基づいて個別に設定されます。','pr.onreq':'お問い合わせ','pr.note':'目標を教えていただければ、あなた専用プランの正確な料金をお伝えします。不要なプランの押し売りや隠れた費用は一切ありません。',
-'co.k':'09 — お問い合わせ','co.t':'理想の身体へ、<br>最初の一歩を。','co.ch':'直接チャットで相談する','co.fh':'または下記フォームからお問い合わせ','co.n':'ワンタップで直接メッセージを送れます。通常24〜48時間以内に私自身が返信いたします。',
+'ts.k':'07 — 受講生の実績と声','ts.t':'確かな変化と、<br>受講生の実績。','ts.s':'筋力向上、体脂肪減少、一生続く習慣を手に入れた受講生の方々のリアルな声と変化です。','ts.q1':'「仕事が忙しくても続けられるメニューを組んでくれました。毎週のフォーム確認と食事のアドバイスが的確で、6ヶ月で過去最高の身体になりました。」','ts.q2':'「テンプレートではなく、過去の肩の違和感に配慮した専用メニューを作成してくれました。毎週の進捗管理のおかげで、怪我なく自己記録を更新できました。」','ts.q3':'「完全な筋トレ初心者でしたが、丁寧な指導で不安なく始められました。無理な食事制限もなく、健康的な習慣が自然と身につきました。」','ts.q4':'「ピリオダイゼーションと疲労管理の理論が素晴らしいです。日本語でもわかりやすくサポートしてくれます。本格的に強くなりたい人に全力でおすすめします。」','ts.t1':'完全オーダーメイド','ts.t2':'受講生満足度','ts.t3':'48時間以内返答','ts.t4':'世界中どこでも対応',
+'fq.k':'08 — よくある質問','fq.t':'よくあるご質問と回答。',
+'pr.k':'09 — 料金プラン','pr.t':'あなたの要望に、<br>合わせた料金体系。','pr.s':'料金はあなたの目標と必要なサポート内容に基づいて個別に設定されます。','pr.onreq':'お問い合わせ','pr.note':'目標を教えていただければ、あなた専用プランの正確な料金をお伝えします。不要なプランの押し売りや隠れた費用は一切ありません。',
+'co.k':'10 — お問い合わせ','co.t':'理想の身体へ、<br>最初の一歩を。','co.ch':'直接チャットで相談する','co.fh':'または下記フォームからお問い合わせ','co.n':'ワンタップで直接メッセージを送れます。通常24〜48時間以内に私自身が返信いたします。',
 'fo.name':'お名前','fo.namep':'お名前をご入力ください','fo.age':'ご年齢','fo.mail':'メールアドレス','fo.goal':'あなたの目標','fo.g0':'目標を選択してください','fo.g1':'筋力向上・筋肥大','fo.g2':'体脂肪減少・ボディメイク','fo.g3':'筋トレ初心者・正しい基礎作り','fo.g4':'競技アスリート・パワーリフティング','fo.g5':'栄養指導・生活習慣改善','fo.g6':'その他','fo.msg':'ご質問・メッセージ（任意）','fo.msgp':'目標、現在の運動歴、普段利用しているジム環境など、ご自由にご記入ください。','fo.send':'メッセージを送信する','fo.ename':'お名前を入力してください。','fo.eage':'有効な年齢を入力してください。','fo.email':'有効なメールアドレスを入力してください。','fo.okt':'お問い合わせを受け付けました。',
 'ft.top':'ページ上部へ戻る','ft.line':'より強く、自信に満ちた身体をあなたに。'}}
 
