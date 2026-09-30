@@ -1425,6 +1425,146 @@ body[data-theme="light"] .ho-kanji-bg{color:rgba(23,22,26,.05)}
  .co-note{font-size:.62rem;margin-top:.9rem}
  #toast{font-size:.56rem;letter-spacing:.12em;padding:.65em 1.1em}
 }
+
+/* ================= 5-STEP PROCESS ROADMAP LUXURY UI/UX ================= */
+.steps {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 1.1rem !important;
+  margin-top: 1.6rem !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.step-card {
+  border: 1px solid var(--line);
+  background: var(--cardbg);
+  padding: 1.5rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 180px;
+  box-sizing: border-box;
+  transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--acc), transparent);
+  opacity: 0;
+  transition: opacity .35s;
+  z-index: 2;
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+
+.step-card:hover {
+  border-color: rgba(200, 90, 50, .38);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .28), 0 0 24px rgba(200, 90, 50, .08);
+}
+
+.step-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0.9rem;
+}
+
+.step-badge {
+  font-family: var(--fd);
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-stretch: 115%;
+  font-variation-settings: "wdth" 115;
+  color: var(--acc);
+  line-height: 1;
+  letter-spacing: .02em;
+}
+
+.step-tag {
+  font-size: 0.44rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dim);
+  border: 1px solid var(--line2);
+  padding: 0.3em 0.6em;
+  border-radius: 2px;
+}
+
+.step-title {
+  font-family: var(--fd);
+  font-size: clamp(0.92rem, 1.2vw, 1.08rem);
+  font-weight: 850;
+  font-stretch: 112%;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+body[data-lang=jp] .step-title {
+  font-family: var(--fjp);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.step-desc {
+  font-size: 0.8rem;
+  color: var(--mute);
+  line-height: 1.55;
+  opacity: 0.92;
+  margin: 0;
+}
+
+body[data-lang=jp] .step-desc {
+  font-family: var(--fjp);
+  line-height: 1.7;
+}
+
+@media (max-width: 1120px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.1rem !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.9rem !important;
+  }
+  .step-card {
+    padding: 1.25rem 1rem;
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .step-card {
+    min-height: 0;
+  }
+}
+
 </style>
 </head>
 <body data-lang="en" data-theme="dark">
@@ -2222,7 +2362,7 @@ function renderDynamic(){
    <span class="j-word jpd" aria-hidden="true">${j.jp}</span>
    <h3><em>${j.n}</em>${LANG==='jp'?j.jp:j.en}</h3><p>${LANG==='jp'?j.djp:j.den}</p></article>`).join('');
  setJIdx(1);
- const st=$('.steps');if(st)st.innerHTML=PROCESS.map(p=>`<div class="step"><b>${p.n}</b><h3>${LANG==='jp'?p.jp:p.en}</h3><p>${LANG==='jp'?p.djp:p.den}</p></div>`).join('');
+ const st=$('.steps');if(st)st.innerHTML=PROCESS.map((p,i)=>`<div class="step-card"><div class="step-card-top"><span class="step-badge">${p.n}</span><span class="step-tag">${LANG==='jp'?'ステップ':'STEP'} ${pad(i+1)}</span></div><h3 class="step-title">${LANG==='jp'?p.jp:p.en}</h3><p class="step-desc">${LANG==='jp'?p.djp:p.den}</p></div>`).join('');
  const fl=$('.faq-list');if(fl)fl.innerHTML=FAQ.map(f=>`<div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span>${LANG==='jp'?f.qj:f.qe}</span><span class="pl" aria-hidden="true"></span></button><div class="faq-a"><div><p>${LANG==='jp'?f.aj:f.ae}</p></div></div></div>`).join('');
  $$('.svc-item, .faq-item').forEach(it=>{
   const btn=$('.svc-head, .faq-q',it);if(!btn||btn._b)return;btn._b=true;
