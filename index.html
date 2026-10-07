@@ -1620,6 +1620,47 @@ body[data-lang=jp] .step-desc {
     gap: 0.9rem !important;
   }
 }
+
+/* MOBILE SMOOTH SIDE-SCROLLING FOR JOURNEY PHOTOS & ZERO BACKGROUND SCROLL BUGS */
+@media(max-width:768px){
+ .j-stage, html.has-st .j-stage {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth !important;
+  overscroll-behavior-x: contain !important;
+  overscroll-behavior-y: auto !important;
+  touch-action: pan-x pan-y !important;
+  min-height: auto !important;
+  height: auto !important;
+  padding: 24px 0 16px !important;
+  background: var(--ink) !important;
+ }
+ .j-stage::-webkit-scrollbar {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+ }
+ .j-track {
+  transform: none !important;
+  width: max-content !important;
+  padding: 0 5vw !important;
+  gap: 1.2rem !important;
+ }
+ .j-card {
+  scroll-snap-align: center !important;
+  scroll-snap-stop: always !important;
+  flex: 0 0 82vw !important;
+  max-width: 82vw !important;
+  width: 82vw !important;
+ }
+ .j-ph {
+  height: clamp(250px, 52vh, 380px) !important;
+  width: 100% !important;
+ }
+}
+
 </style>
 </head>
 <body data-lang="en" data-theme="dark">
@@ -2521,8 +2562,9 @@ function initScrollFX(){
  fxCtx=gsap.context(()=>{
   ScrollTrigger.create({trigger:'#hero',start:'top top',end:'bottom top',scrub:true,onUpdate:s=>{GL.prog=s.progress}});
   const track=$('.j-track');
+  const isMobile=window.innerWidth<768||window.matchMedia('(max-width: 768px)').matches;
   const dist=()=>track?Math.max(0,track.scrollWidth-window.innerWidth+window.innerWidth*.08):0;
-  if(track&&dist()>10){
+  if(!isMobile&&track&&dist()>10){
    gsap.to(track,{x:()=>-dist(),ease:'none',
     scrollTrigger:{trigger:'.j-stage',start:'top top',end:()=>'+='+dist(),scrub:.3,pin:true,pinSpacing:true,invalidateOnRefresh:true,
      onUpdate:s=>{const bar=$('.j-prog i');if(bar)bar.style.transform=`scaleX(${s.progress})`;
@@ -2714,11 +2756,17 @@ function boot(){
  observeReveals();
  BM.init();
  Gal.init();
- const jstage=$('.j-stage');
- if(jstage){jstage.addEventListener('scroll',()=>{
-   if(document.documentElement.classList.contains('no-st')){
+  const jstage=$('.j-stage');
+  if(jstage){
+   jstage.addEventListener('scroll',()=>{
     const n=JOURNEY.length,max=jstage.scrollWidth-jstage.clientWidth;
-    setJIdx(Math.round((jstage.scrollLeft/(max||1))*(n-1))+1)}},{passive:true})}
+    if(max>0){
+     const prog=Math.max(0,Math.min(1,jstage.scrollLeft/max));
+     const bar=$('.j-prog i');if(bar)bar.style.transform=`scaleX(${prog})`;
+     setJIdx(Math.min(n,Math.floor(prog*(n-1))+1));
+    }
+   },{passive:true});
+  }
  try{GL.init()}catch(e){document.body.classList.add('no-gl')}
  initScrollFX();
  requestAnimationFrame(loop);
