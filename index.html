@@ -630,16 +630,16 @@ body.rm .j-stage::-webkit-scrollbar,html.no-st .j-stage::-webkit-scrollbar{heigh
 .pw b{font-family:var(--fmin);font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:600;display:block;line-height:1.15}
 .pw span{font-size:.52rem;letter-spacing:.36em;text-transform:uppercase;color:var(--acc);margin-top:.5rem;display:block}
 @media(max-width:700px){.phil-words{display:grid;grid-template-columns:repeat(2,1fr);gap:0;padding:1.2rem 0}.pw{padding:.9rem .6rem;text-align:center}.pw+.pw{border-left:0;border-top:0;padding-top:0}.pw:nth-child(2n){border-left:1px solid var(--line)}.pw:nth-child(n+3){border-top:1px solid var(--line)}.pw b{font-size:clamp(1.4rem,5vw,2rem)}.pw span{font-size:.44rem;letter-spacing:.18em}.phil-title{font-size:clamp(1.5rem,6.5vw,2.6rem)}}
-.steps{border-top:1px solid var(--line);margin-top:2.6rem;max-width:900px}
-.step{display:grid;grid-template-columns:64px minmax(140px,.32fr) 1fr;gap:1.2rem;padding:1.15rem 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .35s var(--ease)}
-.step:hover{padding-left:.7rem}
-.step b{font-family:var(--fd);font-weight:900;font-stretch:120%;font-variation-settings:"wdth" 120;font-size:1.5rem;color:transparent;-webkit-text-stroke:1px var(--acc)}
+
+
+
+
 @supports not (-webkit-text-stroke:1px black){.step b{color:var(--acc)}}
-.step h3{font-family:var(--fd);font-weight:850;font-stretch:112%;font-variation-settings:"wdth" 112;text-transform:uppercase;font-size:clamp(.85rem,1.8vw,1.1rem)}
-body[data-lang=jp] .step h3{font-family:var(--fjp);font-variation-settings:normal;font-stretch:100%;text-transform:none;font-weight:700}
-.step p{color:var(--mute);font-size:.86rem}
-body[data-lang=jp] .step p{font-family:var(--fjp)}
-@media(max-width:560px){.step{grid-template-columns:42px 1fr;gap:.8rem;padding:.95rem 0}.step p{grid-column:2;font-size:.82rem}.step h3{font-size:clamp(.82rem,3.4vw,1rem)}.step b{font-size:1.3rem}}
+
+
+
+
+@media(max-width:560px){}
 
 /* BODY MAP */
 .bm-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.4rem,3.5vw,3rem);align-items:center;margin-top:2rem}
@@ -1327,24 +1327,9 @@ body[data-theme="light"] .ho-kanji-bg{color:rgba(23,22,26,.05)}
 }
 
 /* 5-Step Process Roadmap Polish */
-.steps{
- display:grid;
- grid-template-columns:repeat(5,1fr);
- gap:1.2rem;
- margin-top:2.2rem;
- position:relative;
-}
-.step{
- border:1px solid var(--line);
- background:var(--cardbg);
- padding:1.6rem 1.2rem;
- position:relative;
- transition:border-color .35s,transform .4s var(--ease);
-}
-.step:hover{
- border-color:var(--acc);
- transform:translateY(-3px);
-}
+
+
+
 .step b{
  font-family:var(--fd);font-size:1.8rem;font-weight:900;
  color:rgba(200,90,50,.3);line-height:1;display:block;margin-bottom:.6rem;
@@ -1358,7 +1343,7 @@ body[data-theme="light"] .ho-kanji-bg{color:rgba(23,22,26,.05)}
  font-size:.74rem;color:var(--mute);line-height:1.5;
 }
 @media(max-width:960px){
- .steps{grid-template-columns:1fr;gap:.9rem}
+ 
 }
 
 /* Pricing Popular Card Accent */
@@ -1496,7 +1481,7 @@ body[data-lang="jp"] .end {
 }
 
 
-/* ================= 5-STEP PROCESS ROADMAP UI/UX ================= */
+/* ================= 5-STEP PROCESS ROADMAP UNIFIED SYSTEM ================= */
 .steps {
   display: grid !important;
   grid-template-columns: repeat(5, 1fr) !important;
@@ -1509,19 +1494,20 @@ body[data-lang="jp"] .end {
 }
 
 .step-card {
-  border: 1px solid var(--line);
-  background: var(--cardbg);
-  padding: 1.6rem 1.4rem;
-  position: relative;
+  border: 1px solid var(--line) !important;
+  background: var(--cardbg) !important;
+  padding: 1.6rem 1.3rem !important;
+  position: relative !important;
   overflow: visible !important;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 190px;
-  height: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  min-height: 0 !important;
   box-sizing: border-box !important;
-  border-radius: 4px;
-  transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+  border-radius: 4px !important;
+  transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease) !important;
 }
 
 .step-card::before {
@@ -1543,78 +1529,75 @@ body[data-lang="jp"] .end {
 }
 
 .step-card:hover {
-  border-color: rgba(200, 90, 50, .4);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, .3), 0 0 24px rgba(200, 90, 50, .08);
+  border-color: rgba(200, 90, 50, .4) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .3), 0 0 24px rgba(200, 90, 50, .08) !important;
 }
 
 .step-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 0.9rem;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-bottom: 0.9rem !important;
 }
 
 .step-badge {
-  font-family: var(--fd);
-  font-size: 1.6rem;
-  font-weight: 900;
-  font-stretch: 115%;
-  font-variation-settings: "wdth" 115;
-  color: var(--acc);
-  line-height: 1;
-  letter-spacing: .02em;
+  font-family: var(--fd) !important;
+  font-size: 1.6rem !important;
+  font-weight: 900 !important;
+  color: var(--acc) !important;
+  line-height: 1 !important;
+  letter-spacing: .02em !important;
 }
 
 .step-tag {
-  font-size: 0.46rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--paper);
-  border: 1px solid var(--line2);
-  padding: 0.32em 0.65em;
-  border-radius: 2px;
-  font-weight: 600;
-  background: rgba(236, 232, 225, 0.04);
+  font-size: 0.46rem !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: var(--paper) !important;
+  border: 1px solid var(--line2) !important;
+  padding: 0.32em 0.65em !important;
+  border-radius: 2px !important;
+  font-weight: 600 !important;
+  background: rgba(236, 232, 225, 0.04) !important;
 }
 
 .step-title {
-  font-family: var(--fd);
-  font-size: clamp(0.98rem, 1.2vw, 1.15rem);
-  font-weight: 850;
-  font-stretch: 112%;
-  font-variation-settings: "wdth" 112;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--paper);
-  margin-bottom: 0.6rem;
-  line-height: 1.25;
+  font-family: var(--fd) !important;
+  font-size: clamp(0.98rem, 1.2vw, 1.15rem) !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--paper) !important;
+  margin-bottom: 0.6rem !important;
+  line-height: 1.25 !important;
 }
 
 body[data-lang=jp] .step-title {
-  font-family: var(--fjp);
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0.04em;
+  font-family: var(--fjp) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: 0.04em !important;
 }
 
 .step-desc {
-  font-size: 0.84rem;
-  color: var(--mute);
-  line-height: 1.6;
-  opacity: 0.92;
-  margin: 0;
-  word-break: normal;
-  overflow-wrap: break-word;
+  font-size: 0.84rem !important;
+  color: var(--mute) !important;
+  line-height: 1.6 !important;
+  opacity: 0.92 !important;
+  margin: 0 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
 }
 
 body[data-lang=jp] .step-desc {
-  font-family: var(--fjp);
-  line-height: 1.7;
+  font-family: var(--fjp) !important;
+  line-height: 1.7 !important;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1280px) {
   .steps {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1.2rem !important;
@@ -1627,8 +1610,7 @@ body[data-lang=jp] .step-desc {
     gap: 1rem !important;
   }
   .step-card {
-    padding: 1.35rem 1.15rem;
-    min-height: 170px;
+    padding: 1.35rem 1.15rem !important;
   }
 }
 
@@ -1637,11 +1619,7 @@ body[data-lang=jp] .step-desc {
     grid-template-columns: 1fr !important;
     gap: 0.9rem !important;
   }
-  .step-card {
-    min-height: 0;
-  }
 }
-
 </style>
 </head>
 <body data-lang="en" data-theme="dark">
