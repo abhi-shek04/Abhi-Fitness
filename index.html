@@ -1806,12 +1806,10 @@ body[data-theme="light"] .ho-kanji-bg{color:rgba(23,22,26,.05)}
   <div class="vm-box">
     <button class="vm-close" type="button" aria-label="Close video modal">CLOSE ✕</button>
     <div class="vm-content">
-      <div class="vm-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-        <h3 data-i18n="vm.t">INTRODUCTION VIDEO READY</h3>
-        <p data-i18n="vm.s">Video player is ready and integrated. Once you provide your video file or YouTube / Vimeo link, it will play here in full HD.</p>
-        <a class="btn btn-solid" href="#contact" data-scroll style="margin-top:.8rem"><span data-i18n="cta.start">START COACHING</span></a>
-      </div>
+      <video id="intro-player" controls playsinline preload="metadata" style="width:100%;height:100%;max-height:80vh;object-fit:contain;background:#000;border-radius:4px;">
+        <source src="intro_video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video playback.
+      </video>
     </div>
   </div>
 </div>
